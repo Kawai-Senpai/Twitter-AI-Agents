@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html><head><style>
+                body { 
+                    max-width: 800px; 
+                    margin: 0 auto; 
+                    padding: 20px; 
+                    font-family: Arial, sans-serif; 
+                    line-height: 1.6;
+                    color: #333;
+                }
+                img { max-width: 100%; height: auto; }
+                pre { 
+                    background-color: #f5f5f5; 
+                    padding: 15px; 
+                    overflow-x: auto;
+                    border-radius: 4px;
+                }
+                code { 
+                    background-color: #f5f5f5; 
+                    padding: 2px 5px;
+                    border-radius: 3px;
+                }
+                h1, h2, h3 { color: #2c3e50; }
+                a { color: #3498db; }
+                blockquote {
+                    border-left: 4px solid #ccc;
+                    margin: 0;
+                    padding-left: 16px;
+                }
+            </style></head><body>
+<!DOCTYPE html>
+
+<html>
+<meta charset="utf-8"/>
+<style>
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1c1c1c;
+        color: white;
+    }
+    .markdown-body table tr {
+        background-color: #1c1c1c;
+    }
+    .markdown-body table tr:nth-child(2n) {
+        background-color: black;
+    }
+}
+</style>
+<link href="../feed.xml" rel="alternate" title="Translations" type="application/rss+xml"/>
+<link href="../css/common-vendor.b8ecfc406ac0b5f77a26.css" rel="stylesheet" type="text/css"/>
+<link href="../css/fretboard.f32f2a8d5293869f0195.css" rel="stylesheet" type="text/css"/>
+<link href="../css/pretty.0ae3265014f89d9850bf.css" rel="stylesheet" type="text/css"/>
+<link href="../css/pretty-vendor.83ac49e057c3eac4fce3.css" rel="stylesheet" type="text/css"/>
+<link href="../css/global.css" rel="stylesheet" type="text/css"/>
+<link href="../css/misc.css" rel="stylesheet" type="text/css"/>
+<script type="text/x-mathjax-config">
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global',
+  }
+};
+</script>
+<script async="" id="MathJax-script" src="../scripts/tex-svg.js" type="text/javascript">
+</script>
+<style>
+</style>
+<div class="container-fluid markdown-body comment-enabled" data-hard-breaks="true" id="doc">
+<div id="color-mode-switch">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<input id="switch" type="checkbox"/>
+<label for="switch">Dark Mode Toggle</label>
+<svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<script type="text/javascript">
+  // Update root html class to set CSS colors
+  const toggleDarkMode = () => {
+    const root = document.querySelector('html');
+    root.classList.toggle('dark');
+  }
+
+  // Update local storage value for colorScheme
+  const toggleColorScheme = () => {
+    const colorScheme = localStorage.getItem('colorScheme');
+    if (colorScheme === 'light') localStorage.setItem('colorScheme', 'dark');
+    else localStorage.setItem('colorScheme', 'light');
+  }
+
+  // Set toggle input handler
+  const toggle = document.querySelector('#color-mode-switch input[type="checkbox"]');
+  if (toggle) toggle.onclick = () => {
+    toggleDarkMode();
+    toggleColorScheme();
+  }
+
+  // Check for color scheme on init
+  const checkColorScheme = () => {
+    const colorScheme = localStorage.getItem('colorScheme');
+    // Default to light for first view
+    if (colorScheme === null || colorScheme === undefined) localStorage.setItem('colorScheme', 'light');
+    // If previously saved to dark, toggle switch and update colors
+    if (colorScheme === 'dark') {
+      toggle.checked = true;
+      toggleDarkMode();
+    }
+  }
+  checkColorScheme();
+</script>
+<meta content="summary" name="twitter:card"/>
+<meta content="Translations" name="twitter:title">
+<meta content="http://vitalik.ca/images/icon.png" name="twitter:image"/>
+<title> Translations </title>
+<br/>
+<center><h1 style="border-bottom:0px"> Translations </h1></center>
+<center><hr/>
+<span class="toc-category" style="font-size:81%"><a href="../categories/blockchains.html">Blockchains</a></span>
+<span class="toc-category" style="font-size:75%"><a href="../categories/cryptography.html">Cryptography</a></span>
+<span class="toc-category" style="font-size:100%"><a href="../categories/economics.html">Economics</a></span>
+<span class="toc-category" style="font-size:100%"><a href="../categories/fun.html">Fun</a></span>
+<span class="toc-category" style="font-size:100%"><a href="../categories/general.html">General</a></span>
+<span class="toc-category" style="font-size:100%"><a href="../categories/gitcoin.html">Gitcoin</a></span>
+<span class="toc-category" style="font-size:100%"><a href="../categories/math.html">Math</a></span>
+<span class="toc-category" style="font-size:90%"><a href="../categories/philosophy.html">Philosophy</a></span>
+<span class="toc-category" style="font-size:75%"><a href="../categories/translations.html">Translations</a></span>
+<hr/></center>
+<br/>
+<ul class="post-list" style="padding-left:0">
+<li>
+<span class="post-meta">2022 Oct 28</span>
+<h3 style="margin-top:12px">
+<a class="post-link" href="../general/2022/10/28/ux_zhCN.html">æå¨å å¯ä¸ççä¸äºä¸ªäººä½éª</a>
+</h3>
+</li>
+<li>
+<span class="post-meta">2022 Oct 28</span>
+<h3 style="margin-top:12px">
+<a class="post-link" href="../general/2022/10/28/revenue_evil_zhCN.html">æ¶å¥-éªæ¶æ²çº¿ï¼æèâå¬å±ç©åèèµä¼åâçå¦ä¸ç§æ¹å¼</a>
+</h3>
+</li>
+<li>
+<span class="post-meta">2022 Aug 29</span>
+<h3 style="margin-top:12px">
+<a class="post-link" href="../general/2022/08/29/zkevm_zhTW.html">ä¸åé¡åç ZK-EVM</a>
+</h3>
+</li>
+<li>
+<span class="post-meta">2022 Aug 04</span>
+<h3 style="margin-top:12px">
+<a class="post-link" href="../general/2022/08/04/zkevm_TR.html">FarklÄ± ZK-EVM TÃ¼rleri</a>
+</h3>
+</li>
+<li>
+<span class="post-meta">2022 Jul 13</span>
+<h3 style="margin-top:12px">
+<a class="post-link" href="../general/2022/07/13/networkstates_zhCN.html">ãç½ç»å½å®¶ãä¹æè§</a>
+</h3>
+</li>
+<li>
+<span class="post-meta">2021 May 25</span>
+<h3 style="margin-top:12px">
+<a class="post-link" href="../general/2021/05/25/voting2_ES.html">La votaciÃ³n mediante blockchain estÃ¡ sobrevalorada entre personas desinformadas pero subestimada entre personas informadas</a>
+</h3>
+</li>
+<li>
+<span class="post-meta">2021 Mar 23</span>
+<h3 style="margin-top:12px">
+<a class="post-link" href="../general/2021/03/23/legitimacy_ES.html">El recurso escaso mÃ¡s importante es la legitimidad</a>
+</h3>
+</li>
+<li>
+<span class="post-meta">2021 Jan 05</span>
+<h3 style="margin-top:12px">
+<a class="post-link" href="../general/2021/01/05/rollup_ES.html">La GuÃ­a Incompleta de los Rollups</a>
+</h3>
+</li>
+<li>
+<span class="post-meta">2020 Nov 06</span>
+<h3 style="margin-top:12px">
+<a class="post-link" href="../general/2020/11/06/pos2020_zhTW.html">çºä»éº¼æ¬çè­ææ£æ£çï¼2020 å¹´åä¸æï¼</a>
+</h3>
+</li>
+<li>
+<span class="post-meta">2020 Oct 18</span>
+<h3 style="margin-top:12px">
+<a class="post-link" href="../general/2020/10/18/round7_FR.html"> 7Ã¨me tour des subventions Gitcoin - RÃ©trospective </a>
+</h3>
+</li>
+<li>
+<span class="post-meta">2020 Feb 18</span>
+<h3 style="margin-top:12px">
+<a class="post-link" href="../general/2020/02/18/election_zhTW.html">é æ¸¬å¸å ´ï¼ä¸åé¸èå°æäºï¼2021å¹´ äºæï¼</a>
+</h3>
+</li>
+<li>
+<span class="post-meta">2016 Dec 29</span>
+<h3 style="margin-top:12px">
+<a class="post-link" href="../general/2016/12/29/pos_design_TR.html">[Mirror] Bir Proof of Stake TasarÄ±m Felsefesi</a>
+</h3>
+</li>
+<li>
+<span class="post-meta">2000 Jan 01</span>
+<h3 style="margin-top:12px">
+<a class="post-link" href="../general/2000/01/01/On_Collusion_DE.html">Ãber Kollusion</a>
+</h3>
+</li>
+<li>
+<span class="post-meta">2000 Jan 01</span>
+<h3 style="margin-top:12px">
+<a class="post-link" href="../general/2000/01/01/On_Collusion_IT.html">Situazioni di collusione</a>
+</h3>
+</li>
+<li>
+<span class="post-meta">2000 Jan 01</span>
+<h3 style="margin-top:12px">
+<a class="post-link" href="../general/2000/01/01/On_Collusion_Portuguese.html">Na colusÃ£o</a>
+</h3>
+</li>
+<li>
+<span class="post-meta">2000 Jan 01</span>
+<h3 style="margin-top:12px">
+<a class="post-link" href="../general/2000/01/01/On_Collusion_Polish.html">Zmowa</a>
+</h3>
+</li>
+</ul> </meta></div></html><div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; color: #666;">Source: https://vitalik.eth.limo/categories/translations.html</div></body></html>

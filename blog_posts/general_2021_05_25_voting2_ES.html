@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html><head><style>
+                body { 
+                    max-width: 800px; 
+                    margin: 0 auto; 
+                    padding: 20px; 
+                    font-family: Arial, sans-serif; 
+                    line-height: 1.6;
+                    color: #333;
+                }
+                img { max-width: 100%; height: auto; }
+                pre { 
+                    background-color: #f5f5f5; 
+                    padding: 15px; 
+                    overflow-x: auto;
+                    border-radius: 4px;
+                }
+                code { 
+                    background-color: #f5f5f5; 
+                    padding: 2px 5px;
+                    border-radius: 3px;
+                }
+                h1, h2, h3 { color: #2c3e50; }
+                a { color: #3498db; }
+                blockquote {
+                    border-left: 4px solid #ccc;
+                    margin: 0;
+                    padding-left: 16px;
+                }
+            </style></head><body>
+<!DOCTYPE html>
+
+<html>
+<meta charset="utf-8"/>
+<style>
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1c1c1c;
+        color: white;
+    }
+    .markdown-body table tr {
+        background-color: #1c1c1c;
+    }
+    .markdown-body table tr:nth-child(2n) {
+        background-color: black;
+    }
+}
+</style>
+<link href="../../../../feed.xml" rel="alternate" title="La votaciÃ³n mediante blockchain estÃ¡ sobrevalorada entre personas desinformadas pero subestimada entre personas informadas" type="application/rss+xml"/>
+<link href="../../../../css/common-vendor.b8ecfc406ac0b5f77a26.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../css/fretboard.f32f2a8d5293869f0195.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../css/pretty.0ae3265014f89d9850bf.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../css/pretty-vendor.83ac49e057c3eac4fce3.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../css/global.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../css/misc.css" rel="stylesheet" type="text/css"/>
+<script type="text/x-mathjax-config">
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global',
+  }
+};
+</script>
+<script async="" id="MathJax-script" src="../../../../scripts/tex-svg.js" type="text/javascript">
+</script>
+<style>
+</style>
+<div class="container-fluid markdown-body comment-enabled" data-hard-breaks="true" id="doc">
+<div id="color-mode-switch">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<input id="switch" type="checkbox"/>
+<label for="switch">Dark Mode Toggle</label>
+<svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<script type="text/javascript">
+  // Update root html class to set CSS colors
+  const toggleDarkMode = () => {
+    const root = document.querySelector('html');
+    root.classList.toggle('dark');
+  }
+
+  // Update local storage value for colorScheme
+  const toggleColorScheme = () => {
+    const colorScheme = localStorage.getItem('colorScheme');
+    if (colorScheme === 'light') localStorage.setItem('colorScheme', 'dark');
+    else localStorage.setItem('colorScheme', 'light');
+  }
+
+  // Set toggle input handler
+  const toggle = document.querySelector('#color-mode-switch input[type="checkbox"]');
+  if (toggle) toggle.onclick = () => {
+    toggleDarkMode();
+    toggleColorScheme();
+  }
+
+  // Check for color scheme on init
+  const checkColorScheme = () => {
+    const colorScheme = localStorage.getItem('colorScheme');
+    // Default to light for first view
+    if (colorScheme === null || colorScheme === undefined) localStorage.setItem('colorScheme', 'light');
+    // If previously saved to dark, toggle switch and update colors
+    if (colorScheme === 'dark') {
+      toggle.checked = true;
+      toggleDarkMode();
+    }
+  }
+  checkColorScheme();
+</script>
+<meta content="summary" name="twitter:card"/>
+<meta content="La votaciÃ³n mediante blockchain estÃ¡ sobrevalorada entre personas desinformadas pero subestimada entre personas informadas" name="twitter:title">
+<meta content="http://vitalik.ca/images/icon.png" name="twitter:image"/>
+<br/>
+<h1 style="margin-bottom:7px"> La votaciÃ³n mediante blockchain estÃ¡ sobrevalorada entre personas desinformadas pero subestimada entre personas informadas </h1>
+<small style="float:left; color: #888"> 2021 May 25 </small>
+<small style="float:right; color: #888"><a href="../../../../index.html">See all posts</a></small>
+<br/> <br/> <br/>
+<title> La votaciÃ³n mediante blockchain estÃ¡ sobrevalorada entre personas desinformadas pero subestimada entre personas informadas </title>
+<p><em>Agradecimientos especiales a Karl Floersch, Albert Ni, Mr Silly y otros por sus comentarios y discusiones. Agradecimientos especiales a crisgarner por traducir.</em></p>
+<p>La votaciÃ³n es un procedimiento que tiene una necesidad muy importante de integridad en el proceso. El resultado de la votaciÃ³n debe ser correcto y esto debe garantizarse mediante un proceso transparente para que todos puedan estar convencidos de que el resultado es correcto. No deberÃ­a ser posible <a href="https://en.wikipedia.org/wiki/Voter_suppression">interferir exitosamente con el intento de voto</a> de nadie o impedir que su voto sea contado.</p>
+<p>Las blockchains son una tecnologÃ­a que se trata de proporcionar garantÃ­as sobre la integridad del proceso. Si un proceso se ejecuta en una blockchain, se garantiza que el proceso se ejecutarÃ¡ de acuerdo con algÃºn cÃ³digo preacordado y proporcionarÃ¡ la salida correcta. Nadie puede evitar la ejecuciÃ³n, nadie puede manipular la ejecuciÃ³n y nadie puede censurar ni bloquear el procesamiento de las entradas de los usuarios.</p>
+<p>Entonces, a primera vista, parece que las blockchains proporcionan exactamente lo que necesita una votaciÃ³n. Y no soy el Ãºnico que ha tenido ese pensamiento; <a href="https://www.alaskapublic.org/2021/04/15/alaska-would-be-first-state-to-use-blockchain-based-voting-system-under-proposed-bill/">muchos</a> usuarios <a href="https://inc42.com/buzz/india-explores-blockchain-based-e-voting-by-2024-general-elections/">potenciales</a> importantes <a href="https://fortune.com/2018/07/03/blockchain-voting-trial-zug/">estÃ¡n interesados</a>. Pero resulta que algunas personas tienen una opiniÃ³n muy diferente....</p>
+<center>
+<br/> <a href="https://www.computerworld.com/article/3430697/why-blockchain-could-be-a-threat-to-democracy.html"><img src="../../../../images/voting2-files/votingthreat.jpg" style="width:550px"/></a>
+</center>
+<p><br/><br/></p>
+<p>A pesar de la aparente combinaciÃ³n perfecta entre las necesidades de la votaciÃ³n y los beneficios tecnolÃ³gicos que proporcionan las blockchains, regularmente vemos artÃ­culos aterradores <a href="https://www.computerworld.com/article/3430697/why-blockchain-could-be-a-threat-to-democracy">argumentando en contra de la combinaciÃ³n</a> de ambas. Y no es solo un artÃ­culo: <a href="https://www.scientificamerican.com/article/are-blockchains-the-answer-for-secure-elections-probably-not/">aquÃ­ hay un artÃ­culo en contra de la votaciÃ³n mediante blockchain de Scientific American</a>, aquÃ­ hay <a href="https://www.cnet.com/news/blockchain-isnt-answer-to-voting-system-woes/">otro de CNet</a>, y aquÃ­ hay <a href="https://arstechnica.com/tech-policy/2018/11/blockchain-based-elections-would-be-a-disaster-for-democracy/">otro de ArsTechnica</a>. Y no son solo periodistas de tecnologÃ­a al azar: <a href="https://www.schneier.com/blog/archives/2020/11/on-blockchain-voting.html">Bruce Schneier</a> estÃ¡ en contra de la votaciÃ³n mediante blockchain, y los investigadores del MIT <a href="https://people.csail.mit.edu/rivest/pubs/PSNR20.pdf">escribieron un artÃ­culo completo</a> argumentando que es una mala idea. Â¿Entonces, quÃ© estÃ¡ pasando?</p>
+<h2 id="esquema">Esquema</h2>
+<p>Hay <strong>dos lÃ­neas crÃ­ticas clave</strong> que son las mÃ¡s comÃºnmente expresadas por los crÃ­ticos de los protocolos de votaciÃ³n mediante blockchain:</p>
+<ol type="1">
+<li><strong>Las blockchains son la herramienta de software incorrecta</strong> para llevar a cabo una elecciÃ³n. Las propiedades de confianza que proporcionan no se ajustan bien a las propiedades que necesita una votaciÃ³n, y otros tipos de herramientas de software con flujos de informaciÃ³n y propiedades de confianza diferentes funcionarÃ­an mejor.</li>
+<li><strong>El software en general no puede confiarse</strong> para llevar a cabo elecciones, sin importar quÃ© software sea. El riesgo de errores de software y hardware indetectables es demasiado alto, sin importar cÃ³mo estÃ© organizada la plataforma.</li>
+</ol>
+<p><strong>Este artÃ­culo discutirÃ¡ ambas afirmaciones ("refutar" es una palabra demasiado fuerte, pero definitivamente estoy en desacuerdo mÃ¡s de lo que estoy de acuerdo con ambas afirmaciones)</strong>. Primero, discutirÃ© los problemas de seguridad con los intentos existentes de usar blockchains para votar y cÃ³mo <strong>la soluciÃ³n correcta no es abandonar las blockchains, sino combinarlas con otras tecnologÃ­as criptogrÃ¡ficas</strong>. En segundo lugar, abordarÃ© la preocupaciÃ³n sobre si el software (y hardware) puede confiarse o no. La respuesta: <strong>la seguridad informÃ¡tica estÃ¡ mejorando bastante</strong>, y podemos trabajar arduamente para continuar esa tendencia.</p>
+<p>A largo plazo, <strong>insistir permanentemente en el papel serÃ­a una <em>enorme</em> desventaja para nuestra capacidad de mejorar la votaciÃ³n</strong>. Un voto por N aÃ±os es una forma de democracia de 250 aÃ±os de antigÃ¼edad, y podrÃ­amos tener una democracia mucho mejor si la votaciÃ³n fuera mucho mÃ¡s conveniente y sencilla, para que pudiÃ©ramos hacerlo con mucha mÃ¡s frecuencia.</p>
+<p><strong>Cabe decir que toda esta publicaciÃ³n se basa en que exista una buena tecnologÃ­a de escalado de blockchain (por ejemplo, <a href="../../../2021/04/07/sharding.html">sharding</a>).</strong> Por supuesto, si las blockchains no pueden escalar, nada de esto puede suceder. Pero hasta ahora, el desarrollo de esta tecnologÃ­a estÃ¡ avanzando rÃ¡pidamente y no hay razÃ³n para creer que no pueda suceder.</p>
+<h2 id="malos-protocolos-de-votaciÃ³n-mediante-blockchain">Malos protocolos de votaciÃ³n mediante blockchain</h2>
+<p>Los protocolos de votaciÃ³n mediante blockchain son hackeados todo el tiempo. Hace dos aÃ±os, una empresa tecnolÃ³gica de votaciÃ³n mediante blockchain llamada Voatz estaba en boca de todos, y mucha gente estaba muy emocionada al respecto. Pero el aÃ±o pasado, algunos investigadores del MIT descubrieron una <a href="https://internetpolicy.mit.edu/wp-content/uploads/2020/02/SecurityAnalysisOfVoatz_Public.pdf">cadena de vulnerabilidades crÃ­ticas de seguridad</a> en su plataforma. Mientras tanto, en MoscÃº, un sistema de votaciÃ³n mediante blockchain que iba a ser utilizado en una prÃ³xima elecciÃ³n <a href="https://medium.com/swlh/why-was-moscows-blockchain-voting-system-cracked-a-month-before-an-election-6da5e6d9abbb">fue hackeado</a>, afortunadamente un mes antes de que tuviera lugar la elecciÃ³n.</p>
+<p>Los hackeos fueron bastante serios. AquÃ­ hay una tabla de las capacidades de ataque que <a href="https://internetpolicy.mit.edu/wp-content/uploads/2020/02/SecurityAnalysisOfVoatz_Public.pdf">los investigadores que analizaron Voatz</a> lograron descubrir:</p>
+<center>
+<br/> <img class="padded" src="../../../../images/voting2-files/voatzpaper.png" style="width:650px"/>
+</center>
+<p><br/><br/></p>
+<p>Esto por sÃ­ mismo no es un argumento en contra de <em>nunca</em> usar la votaciÃ³n mediante blockchain. Pero sÃ­ es un argumento de que el software de votaciÃ³n mediante blockchain deberÃ­a diseÃ±arse con mÃ¡s cuidado y escalarse de manera lenta e incremental con el tiempo.</p>
+<h2 id="privacidad-y-resistencia-a-la-coerciÃ³n">Privacidad y resistencia a la coerciÃ³n</h2>
+<p>Pero incluso los protocolos de votaciÃ³n mediante blockchain que no estÃ¡n tÃ©cnicamente rotos a menudo son deficientes. Para entender por quÃ©, necesitamos profundizar mÃ¡s en <em>quÃ© propiedades de seguridad especÃ­ficas</em> proporcionan las blockchains y quÃ© propiedades de seguridad especÃ­ficas necesita la votaciÃ³n; cuando lo hagamos, veremos que hay una discrepancia.</p>
+<p>Las blockchains proporcionan dos propiedades clave: <strong>ejecuciÃ³n correcta</strong> y <strong>resistencia a la censura</strong>. La ejecuciÃ³n correcta simplemente significa que la blockchain acepta entradas ("transacciones") de usuarios, las procesa correctamente segÃºn algunas reglas predefinidas y devuelve la salida correcta (o ajusta el "estado" de la blockchain de la manera correcta). La resistencia a la censura tambiÃ©n es fÃ¡cil de entender: cualquier usuario que <em>quiera</em> enviar una transacciÃ³n y estÃ© dispuesto a pagar una tarifa lo suficientemente alta, <em>puede</em> enviar la transacciÃ³n y esperar verla incluida rÃ¡pidamente en la cadena.</p>
+<p>Ambas propiedades son muy importantes para la votaciÃ³n: deseas que la salida de la votaciÃ³n sea realmente el resultado de contar el nÃºmero de votos para cada candidato y seleccionar al candidato con la mayorÃ­a de los votos, y definitivamente deseas que cualquier persona elegible para votar pueda hacerlo, incluso si algÃºn actor poderoso intenta bloquearlos. <strong>Pero la votaciÃ³n tambiÃ©n requiere algunas propiedades cruciales que las blockchains <em>no</em> proporcionan</strong>:</p>
+<ul>
+<li><strong>Privacidad</strong>: no deberÃ­a ser posible decir por quiÃ©n votÃ³ alguien en especÃ­fico, o incluso si votÃ³ en absoluto.</li>
+<li><strong>Resistencia a la coerciÃ³n</strong>: no deberÃ­a ser posible <em>demostrar</em> a otra persona cÃ³mo votaste, <em>incluso si quieres</em></li>
+</ul>
+<p>La necesidad del primer requisito es obvia: deseas que las personas voten basÃ¡ndose en sus sentimientos personales y no en cÃ³mo se sentirÃ¡n las personas a su alrededor, su empleador, la policÃ­a o matones aleatorios en la calle acerca de su elecciÃ³n. El segundo requisito es necesario para evitar la venta de votos: si puedes demostrar cÃ³mo votaste, vender tu voto se vuelve muy fÃ¡cil. La demostraciÃ³n de votos tambiÃ©n habilitarÃ­a formas de coerciÃ³n donde el que ejerce coerciÃ³n exige ver algÃºn tipo de prueba de voto por su candidato preferido. La mayorÃ­a de las personas, incluso aquellas conscientes del primer requisito, no piensan en el segundo requisito. Pero el segundo requisito tambiÃ©n es necesario y es tÃ©cnicamente no trivial proporcionarlo. <strong>Cabe decir que el promedio del "sistema de votaciÃ³n mediante blockchain" que ves en la prÃ¡ctica ni siquiera intenta proporcionar la segunda propiedad y suele fallar en proporcionar la primera</strong>.</p>
+<h2 id="votaciÃ³n-electrÃ³nica-segura-sin-blockchains">VotaciÃ³n electrÃ³nica segura sin blockchains</h2>
+<p>El concepto de ejecuciÃ³n criptogrÃ¡ficamente asegurada de mecanismos sociales no fue inventado por los entusiastas de blockchain y, de hecho, existiÃ³ mucho antes que nosotros. Fuera del espacio de blockchain, existe una tradiciÃ³n de 20 aÃ±os de criptÃ³grafos trabajando en el problema de la votaciÃ³n electrÃ³nica segura, y la buena noticia es que <em>ha habido</em> soluciones. Un documento importante que es citado por gran parte de la literatura de las Ãºltimas dos dÃ©cadas es el artÃ­culo de Juels, Catalano y Jakobsson de 2002 titulado "<a href="https://eprint.iacr.org/2002/165.pdf">Coercion-Resistant Electronic Elections</a>":</p>
+<center>
+<br/> <img class="padded" src="../../../../images/voting2-files/elections.png" style="width:650px"/> <br/><br/><br/>
+</center>
+<p>Desde entonces, ha habido muchas iteraciones sobre el concepto; <a href="https://orbilu.uni.lu/bitstream/10993/29212/1/Civitas-VFinal.pdf">Civitas</a> es un ejemplo destacado, aunque tambiÃ©n hay <a href="https://www.usenix.org/system/files/conference/jets15/jets_0302-achenbach.pdf">otros</a> <a href="https://www.researchgate.net/publication/221947496_Coercion-Resistant_Cryptographic_Voting_Implementing_Free_and_Secret_Electronic_Elections">muchos</a> <a href="https://link.springer.com/chapter/10.1007/978-3-642-32747-6_5">otros</a>. Estos protocolos utilizan un conjunto similar de tÃ©cnicas bÃ¡sicas. Hay un conjunto acordado de "talliers" y hay una suposiciÃ³n de confianza de que la mayorÃ­a de los talliers son honestos. Los talliers tienen "particiones" de una clave privada compartida entre ellos, y la clave pÃºblica correspondiente se publica. Los votantes publican votos encriptados a la clave pÃºblica de los talliers, y los talliers utilizan un <a href="https://www.cs.virginia.edu/~evans/pragmaticmpc/pragmaticmpc.pdf">protocolo de computaciÃ³n segura entre partes (MPC)</a> para descifrar y verificar los votos y calcular el recuento. La computaciÃ³n del recuento se realiza "dentro del MPC": los talliers nunca aprenden su clave privada, y calculan el resultado final sin aprender nada sobre ningÃºn voto individual mÃ¡s allÃ¡ de lo que se puede aprender al mirar el resultado final mismo.</p>
+<p>El cifrado de votos proporciona privacidad, y se agrega alguna infraestructura adicional como <a href="https://en.wikipedia.org/wiki/Mix_network">mix-nets</a> para hacer la privacidad mÃ¡s fuerte. Para proporcionar resistencia a la coerciÃ³n, se utiliza una de dos tÃ©cnicas. Una opciÃ³n es que durante la fase de registro (la fase en la que los talliers aprenden la clave pÃºblica de cada votante registrado), el votante genera o recibe una clave secreta. La clave pÃºblica correspondiente se comparte en secreto entre los talliers, y el MPC de los talliers solo cuenta un voto si estÃ¡ firmado con la clave secreta. Un votante no tiene forma de demostrar a un tercero cuÃ¡l es su clave secreta, por lo que si son sobornados o coercidos, simplemente pueden mostrar y emitir un voto firmado con la clave secreta incorrecta. Alternativamente, un votante podrÃ­a tener la capacidad de enviar un mensaje para <em>cambiar</em> su clave secreta. Un votante no tiene forma de demostrar a un tercero que <em>no</em> enviaron tal mensaje, lo que lleva al mismo resultado.</p>
+<p>La segunda opciÃ³n es una tÃ©cnica en la que los votantes pueden realizar mÃºltiples votos donde el segundo anula al primero. Si un votante es sobornado o coercido, puede emitir un voto por el candidato preferido del sobornador/coercer, pero luego enviar otro voto para anular el primero.</p>
+<center>
+<br/> <img class="padded" src="../../../../images/voting2-files/tallyingscheme.png" style="width:650px"/> <br/><br/> <small><i>Conceder a los votantes la capacidad de emitir un voto posterior que puede anular un voto anterior es el mecanismo clave de resistencia a la coerciÃ³n de <a href="https://www.usenix.org/system/files/conference/jets15/jets_0302-achenbach.pdf">este protocolo de 2015.</a></i></small><br/><br/>
+</center>
+<p>Ahora, llegamos a un matiz clave e importante en todos estos protocolos. Todos ellos dependen de un primitivo externo para completar sus garantÃ­as de seguridad: el <strong>tablero de anuncios</strong> (esto es el "BB" en la figura de arriba). El tablero de anuncios es un lugar donde cualquier votante puede enviar un mensaje, con la garantÃ­a de que (i) cualquiera puede leer el tablero de anuncios y (ii) cualquiera puede enviar un mensaje al tablero de anuncios que es aceptado. La mayorÃ­a de los documentos de votaciÃ³n resistente a la coerciÃ³n que puedes encontrar harÃ¡n referencia casual a la existencia de un tablero de anuncios (<a href="https://www.usenix.org/system/files/conference/jets15/jets_0302-achenbach.pdf">por ejemplo</a> "como es comÃºn en los esquemas de votaciÃ³n electrÃ³nica, asumimos un tablero de anuncios accesible pÃºblicamente y de solo agregar"), pero muchos menos documentos hablan sobre cÃ³mo este tablero de anuncios puede ser <em>implementado</em> en realidad. Y aquÃ­ es donde, con suerte, ves a dÃ³nde voy con esto: <strong>la forma mÃ¡s segura de implementar un tablero de anuncios <em>es</em> simplemente usar una blockchain existente.</strong></p>
+<h2 id="votaciÃ³n-electrÃ³nica-segura-con-blockchains">VotaciÃ³n electrÃ³nica segura con blockchains</h2>
+<p>Por supuesto, ha habido muchos intentos previos a blockchain de hacer un tablero de anuncios. <a href="https://epubs.surrey.ac.uk/107392/5/append-only.pdf">Este documento de 2008</a> es un intento de este tipo; su modelo de confianza es un requisito estÃ¡ndar de que "<code>k</code> de <code>n</code> servidores deben ser honestos" (<code>k = n/2</code> es comÃºn). <a href="https://eprint.iacr.org/2021/047.pdf">Esta revisiÃ³n de literatura de 2021</a> cubre algunos intentos previos a blockchain de tableros de anuncios, asÃ­ como explora el uso de blockchains para el trabajo; las soluciones previas a blockchain revisadas tambiÃ©n confÃ­an en un modelo de confianza k-de-n.</p>
+<p>Una blockchain tambiÃ©n es un modelo de confianza k-de-n; requiere que al menos la mitad de los mineros o validadores de prueba de participaciÃ³n sigan el protocolo, y si esa suposiciÃ³n falla, eso suele resultar en un "ataque del 51%". Entonces, Â¿por quÃ© una blockchain es mejor que un tablero de anuncios especializado? La respuesta es: configurar un sistema k-de-n que realmente sea de confianza es difÃ­cil, y las blockchains son el Ãºnico sistema que ya lo ha resuelto, y a gran escala. Supongamos que algÃºn gobierno anunciara que estaba haciendo un sistema de votaciÃ³n y proporcionara una lista de 15 organizaciones locales y universidades que administrarÃ­an un tablero de anuncios especializado. Â¿CÃ³mo sabrÃ­as, como observador externo, que el gobierno no eligiÃ³ esas 15 organizaciones de una lista de 1000 segÃºn su disposiciÃ³n a colaborar secretamente con una agencia de inteligencia?</p>
+<p><strong>Las blockchains pÃºblicas, por otro lado, tienen mecanismos de consenso econÃ³mico sin permisos (prueba de trabajo o prueba de participaciÃ³n) en los que cualquiera puede participar, y tienen una infraestructura diversa y altamente incentivada de exploradores de bloques, intercambios y otros nodos de observaciÃ³n para verificar constantemente en tiempo real que no estÃ¡ sucediendo nada malo.</strong></p>
+<p>Estos sistemas de votaciÃ³n mÃ¡s sofisticados no <em>solo</em> utilizan blockchains; confÃ­an en la criptografÃ­a, como <a href="../../../2021/01/26/snarks.html">pruebas de conocimiento cero</a> para garantizar la correcciÃ³n, y en la computaciÃ³n multipartita para garantizar la resistencia a la coerciÃ³n. Por lo tanto, evitan las debilidades de sistemas mÃ¡s ingenuos que simplemente "ponen votos directamente en la blockchain" e ignoran los problemas resultantes de privacidad y resistencia a la coerciÃ³n. Sin embargo, el tablero de anuncios de la blockchain sigue siendo una parte clave del modelo de seguridad de todo el diseÃ±o: si el comitÃ© estÃ¡ roto pero la blockchain no lo estÃ¡, se pierde la resistencia a la coerciÃ³n, pero todas las demÃ¡s garantÃ­as en torno al proceso de votaciÃ³n siguen vigentes.</p>
+<h3 id="maci-votaciÃ³n-en-blockchain-resistente-a-la-coerciÃ³n-en-ethereum">MACI: votaciÃ³n en blockchain resistente a la coerciÃ³n en Ethereum</h3>
+<p>El ecosistema de Ethereum estÃ¡ experimentando actualmente con un <a href="https://github.com/appliedZKP/maci">sistema llamado MACI</a> que combina una blockchain, ZK-SNARKs y un Ãºnico actor central que garantiza la resistencia a la coerciÃ³n (pero no tiene el poder de comprometer ninguna propiedad que no sea la resistencia a la coerciÃ³n). MACI no es muy tÃ©cnicamente complicado. Los usuarios participan firmando un mensaje con su clave privada, cifrando el mensaje firmado con una clave pÃºblica publicada por un servidor central y publicando el mensaje firmado cifrado en la blockchain. El servidor descarga los mensajes de la blockchain, los descifra, los procesa y produce el resultado junto con un ZK-SNARK para asegurar que hizo el cÃ¡lculo correctamente.</p>
+<br/>
+<center>
+<img class="padded" src="../../../../images/round9/maci2.png" style="width:500px"/>
+</center>
+<p><br/><br/></p>
+<p>Los usuarios no pueden demostrar cÃ³mo participaron, porque tienen la capacidad de enviar un mensaje de "cambio de clave" para engaÃ±ar a cualquiera que intente auditarlos: primero pueden enviar un mensaje de cambio de clave para cambiar su clave de A a B y luego enviar un "mensaje falso" firmado con A. El servidor rechazarÃ­a el mensaje, pero nadie mÃ¡s tendrÃ­a forma de saber que se habÃ­a enviado el mensaje de cambio de clave. Hay un requisito de confianza en el servidor, aunque solo para la privacidad y la resistencia a la coerciÃ³n; el servidor no puede publicar un resultado incorrecto ya sea calculando incorrectamente o censurando mensajes. A largo plazo, se puede utilizar la computaciÃ³n multipartita para descentralizar el servidor en cierta medida, fortaleciendo las garantÃ­as de privacidad y resistencia a la coerciÃ³n.</p>
+<p>Hay una demostraciÃ³n funcional de este esquema en <a href="https://clr.fund/">clr.fund</a> que se utiliza para la financiaciÃ³n cuadrÃ¡tica. El uso de la blockchain de Ethereum para garantizar la resistencia a la censura de los votos asegura un grado mucho mayor de resistencia a la censura de lo que serÃ­a posible si en su lugar se confiara en un comitÃ© para esto.</p>
+<h3 id="resumen">Resumen</h3>
+<ul>
+<li>El proceso de votaciÃ³n tiene cuatro requisitos de seguridad importantes que deben cumplirse para que una votaciÃ³n sea segura: <strong>correcciÃ³n</strong>, <strong>resistencia a la censura</strong>, <strong>privacidad</strong> y <strong>resistencia a la coerciÃ³n</strong>.</li>
+<li>Las blockchains son buenas en los dos primeros. Son malas en los dos Ãºltimos.</li>
+<li>La <strong>encriptaciÃ³n</strong> de votos en una blockchain puede agregar privacidad. Las <strong>pruebas de conocimiento cero</strong> pueden devolver la correcciÃ³n a pesar de que los observadores no pueden sumar votos directamente porque estÃ¡n encriptados.</li>
+<li>La <strong>computaciÃ³n multipartita</strong> que desencripta y verifica votos puede proporcionar resistencia a la coerciÃ³n, si se combina con un mecanismo donde los usuarios pueden interactuar con el sistema varias veces; la primera interacciÃ³n invalida la segunda, o viceversa.</li>
+<li>El uso de una blockchain garantiza que tiene una resistencia a la censura de alta seguridad y mantiene esta resistencia a la censura <em>incluso si</em> el comitÃ© colude y rompe la resistencia a la coerciÃ³n. <strong>Introducir una blockchain puede aumentar significativamente el nivel de seguridad del sistema.</strong></li>
+</ul>
+<h2 id="pero-se-puede-confiar-en-la-tecnologÃ­a">Pero, Â¿se puede confiar en la tecnologÃ­a?</h2>
+<p>Pero ahora volvemos a la segunda crÃ­tica, mÃ¡s profunda, a cualquier tipo de votaciÃ³n electrÃ³nica, blockchain o no: que la tecnologÃ­a en sÃ­ misma es demasiado insegura para confiar en ella.</p>
+<p>El <a href="https://people.csail.mit.edu/rivest/pubs/PSNR20.pdf">reciente artÃ­culo del MIT</a> que critica la votaciÃ³n en blockchain incluye esta Ãºtil tabla, que representa <em>cualquier</em> forma de votaciÃ³n sin papel como fundamentalmente demasiado difÃ­cil de asegurar:</p>
+<br/>
+<center>
+<img class="padded" src="../../../../images/voting2-files/fourcategories.png" style="width:650px"/>
+</center>
+<p><br/><br/></p>
+<p>La propiedad clave en la que se centran los autores es la <strong>independencia del software</strong>, que definen como "la propiedad de que un cambio o error no detectado en el software de un sistema no puede causar un cambio no detectado en el resultado de la elecciÃ³n". BÃ¡sicamente, un error en el cÃ³digo no deberÃ­a poder hacer accidentalmente que Prezzy McPresidentface sea el nuevo presidente del paÃ­s (o, mÃ¡s realista, un error insertado deliberadamente no deberÃ­a poder aumentar la participaciÃ³n de algÃºn candidato del 42% al 52%).</p>
+<p>Pero hay otras formas de lidiar con los errores. Por ejemplo, cualquier sistema de votaciÃ³n basado en blockchain que utilice pruebas de conocimiento cero pÃºblicamente verificables puede ser verificado de forma independiente. Alguien puede escribir su propia implementaciÃ³n del verificador de pruebas y verificar el Zk-SNARK por sÃ­ mismo. Incluso podrÃ­an escribir su propio software para votar. Claro, la complejidad tÃ©cnica de hacer esto estÃ¡ mÃ¡s allÃ¡ del 99.99% de cualquier base de votantes realista, pero si miles de expertos independientes tienen la capacidad de hacer esto y verificar que funcione, eso es mÃ¡s que suficiente en la prÃ¡ctica.</p>
+<p>Sin embargo, para los autores del MIT, eso no es suficiente:</p>
+<br/>
+<blockquote style="margin-left: 35px; margin-right: 35px">
+<p>AsÃ­, cualquier sistema que sea exclusivamente electrÃ³nico, incluso si es verificable de extremo a extremo, parece inadecuado para elecciones polÃ­ticas en el futuro previsible. La FundaciÃ³n U.S. Vote ha seÃ±alado la promesa de los mÃ©todos E2E-V para mejorar la seguridad de la votaciÃ³n en lÃ­nea, pero ha emitido un informe detallado recomendando evitar su uso para la votaciÃ³n en lÃ­nea a menos que y hasta que la tecnologÃ­a estÃ© mucho mÃ¡s madura y completamente probada en la votaciÃ³n en lugares fÃ­sicos [38].</p>
+<p>Otros han propuesto extensiones de estas ideas. Por ejemplo, la propuesta de Juels et al.Â [55] enfatiza el uso de la criptografÃ­a para proporcionar diversas formas de "resistencia a la coerciÃ³n". La propuesta Civitas de Clarkson et al.Â [24] implementa mecanismos adicionales para la resistencia a la coerciÃ³n, que Iovino et al.Â [53] incorporan y desarrollan aÃºn mÃ¡s en su sistema Selene. Desde nuestra perspectiva, estas propuestas son innovadoras pero poco realistas: son bastante complejas y, lo que es mÃ¡s importante, su seguridad depende de que los dispositivos de los votantes no estÃ©n comprometidos y funcionen segÃºn lo previsto, una suposiciÃ³n poco realista.</p>
+</blockquote>
+<p><br/></p>
+<p>El problema en el que se centran los autores no es la seguridad del <em>hardware del sistema de votaciÃ³n</em>; los riesgos en ese lado pueden mitigarse con pruebas de conocimiento cero. MÃ¡s bien, los autores se centran en un problema de seguridad diferente: Â¿se pueden hacer seguros los <em>dispositivos de los usuarios</em> incluso en principio?</p>
+<p>Dada la larga historia de todo tipo de exploits y ataques a dispositivos de consumo, uno estarÃ­a muy justificado en pensar que la respuesta es "no". Citando mi propio <a href="https://bitcoinmagazine.com/culture/bitcoin-self-defense-part-i-wallet-protection-1368758841">artÃ­culo sobre seguridad de billeteras Bitcoin de 2013</a>:</p>
+<blockquote>
+<p>Anoche, alrededor de las 9 p.Â m. PDT, hice clic en un enlace para ir a CoinChat[.]freetzi[.]com, y se me pidiÃ³ que ejecutara Java. Lo hice (pensando que era una sala de chat legÃ­tima), y no pasÃ³ nada. CerrÃ© la ventana y no pensÃ© mÃ¡s en ello. AbrÃ­ mi billetera bitcoin-qt aproximadamente 14 minutos despuÃ©s y vi una transacciÃ³n que NO aprobÃ© que se dirigÃ­a a la billetera 1Es3QVvKN1qA2p6me7jLCVMZpQXVXWPNTC por casi toda mi billetera...</p>
+</blockquote>
+<p>Y:</p>
+<blockquote>
+<p>En junio de 2011, el miembro de Bitcointalk "allinvain" perdiÃ³ 25,000 BTC (valorados en $500,000 en ese momento) despuÃ©s de que un intruso desconocido de alguna manera obtuvo acceso directo a su computadora. El atacante pudo acceder al archivo wallet.dat de allinvain y vaciar rÃ¡pidamente la billetera, ya sea enviando una transacciÃ³n desde la computadora de allinvain o simplemente subiendo el archivo wallet.dat y vaciÃ¡ndolo en su propia mÃ¡quina.</p>
+</blockquote>
+<p>Pero estos desastres oscurecen una verdad mayor: <strong><em>en los Ãºltimos veinte aÃ±os, la seguridad informÃ¡tica ha mejorado <a href="https://www.infosecurity-magazine.com/opinions/cybersecurity-getting-better-worse/">lenta y constantemente</a></em></strong>. Los ataques son mucho mÃ¡s difÃ­ciles de encontrar, a menudo requiriendo que el atacante encuentre errores en mÃºltiples subsistemas en lugar de encontrar un solo agujero en un cÃ³digo grande y complejo. Los incidentes de alto perfil son mÃ¡s grandes que nunca, pero esto no es una seÃ±al de que algo estÃ© menos seguro; mÃ¡s bien, es simplemente una seÃ±al de que estamos volviÃ©ndonos mucho mÃ¡s dependientes de Internet.</p>
+<p><strong><a href="https://link.springer.com/referenceworkentry/10.1007%2F978-0-387-39940-9_1491">El hardware de confianza</a></strong> es una fuente muy importante de mejoras recientes. Algunos de los nuevos "telÃ©fonos blockchain" (por ejemplo, <a href="https://www.htcexodus.com/mea-en/cryptophone/exodus1s/">este de HTC</a>) llegan bastante lejos con esta tecnologÃ­a y colocan un sistema operativo minimalista centrado en la seguridad en el chip de hardware de confianza, permitiendo que aplicaciones que requieren alta seguridad (por ejemplo, billeteras de criptomonedas) se mantengan separadas de otras aplicaciones. Samsung ha comenzado a fabricar telÃ©fonos utilizando <a href="https://pixelplex.io/blog/what-is-samsung-blockchain-keystore/">tecnologÃ­a</a> <a href="https://www.samsung.com/us/business/solutions/samsung-knox/">similar</a>. E incluso dispositivos que nunca se anuncian como "dispositivos blockchain" (por ejemplo, iPhones) a menudo tienen algÃºn tipo de hardware de confianza. Las billeteras de hardware de criptomonedas son efectivamente lo mismo, excepto que el mÃ³dulo de hardware de confianza estÃ¡ fÃ­sicamente ubicado fuera de la computadora en lugar de dentro. El hardware de confianza (Â¡merecidamente!) a menudo tiene mala reputaciÃ³n en cÃ­rculos de seguridad y especialmente en la comunidad blockchain, porque simplemente <a href="https://arstechnica.com/information-technology/2020/03/hackers-can-steal-secret-data-stored-in-intels-sgx-secure-enclave/">sigue</a> <a href="https://techmonitor.ai/techonology/cybersecurity/intel-sgx-plundervolt-attack">siendo</a> <a href="https://www.theregister.com/2020/11/14/intel_sgx_physical_security/">vulnerado</a> una y otra <a href="https://www.theregister.com/2020/11/14/intel_sgx_physical_security/">vez</a>. Y de hecho, definitivamente no querrÃ­as usarlo para <em>reemplazar</em> tu protecciÃ³n de seguridad. Pero como <em>complemento</em>, es una gran mejora.</p>
+<p>Finalmente, aplicaciones individuales, como billeteras de criptomonedas y sistemas de votaciÃ³n, son mucho mÃ¡s simples y tienen menos margen de error que un sistema operativo de consumo completo, incluso si tienes que incorporar soporte para <a href="../../../2019/12/07/quadratic.html">votaciÃ³n cuadrÃ¡tica</a>, <a href="https://en.wikipedia.org/wiki/Sortition">sorteo</a>, <a href="https://ethresear.ch/t/quadratic-voting-with-sortition/6065">sorteo cuadrÃ¡tico</a> y cualesquiera horrores que invente la generaciÃ³n futura de Glen Weyl en 2040. La ventaja de herramientas como el hardware de confianza es su capacidad para <em>aislar</em> lo simple de lo complejo y posiblemente defectuoso, y estas herramientas estÃ¡n teniendo cierto Ã©xito.</p>
+<h2 id="entonces-los-riesgos-podrÃ­an-disminuir-con-el-tiempo.-pero-cuÃ¡les-son-los-beneficios">Entonces, los riesgos podrÃ­an disminuir con el tiempo. Pero, Â¿cuÃ¡les son los beneficios?</h2>
+<p>Estas mejoras en la tecnologÃ­a de seguridad apuntan a un futuro donde el hardware de consumo podrÃ­a ser mÃ¡s confiable en el futuro de lo que es hoy. Las inversiones realizadas en esta Ã¡rea en los Ãºltimos aÃ±os probablemente sigan dando frutos en la prÃ³xima dÃ©cada, y podrÃ­amos esperar mejoras significativas adicionales. Pero, Â¿cuÃ¡les son los beneficios de hacer que la votaciÃ³n sea electrÃ³nica (basada en blockchain o de otra manera) que justifican explorar todo este espacio?</p>
+<p><strong>Mi respuesta es simple: la votaciÃ³n se volverÃ­a mucho mÃ¡s eficiente, permitiÃ©ndonos hacerlo con mucha mÃ¡s frecuencia</strong>. Actualmente, la participaciÃ³n democrÃ¡tica formal en organizaciones (gubernamentales o corporativas) tiende a limitarse a un solo voto cada 1-6 aÃ±os. Esto significa efectivamente que cada votante solo aporta menos de un bit de informaciÃ³n al sistema cada aÃ±o. QuizÃ¡s en gran parte como resultado de esto, la toma de decisiones descentralizada en nuestra sociedad estÃ¡ fuertemente bifurcada en dos extremos: democracia pura y mercados puros. La democracia es o muy ineficiente (votos corporativos y gubernamentales) o muy insegura (me gusta y retuitea en las redes sociales). Los mercados son mucho mÃ¡s eficientes tecnolÃ³gicamente y son mucho mÃ¡s seguros que las redes sociales, pero su lÃ³gica econÃ³mica fundamental los convierte en una mala opciÃ³n para muchos tipos de problemas de decisiÃ³n, especialmente aquellos relacionados con bienes pÃºblicos.</p>
+<center>
+<br/> <img class="padded" src="../../../../images/voting2-files/triangle.png"/><br/><br/> <i><small>SÃ­, sÃ© que es otro triÃ¡ngulo y realmente me disculpo por tener que usarlo. Pero por favor, aguanta solo esta vez... (bueno, estÃ¡ bien, estoy seguro de que harÃ© aÃºn mÃ¡s triÃ¡ngulos en el futuro; simplemente acÃ©ptalo y supÃ©ralo)</small></i>
+</center>
+<p><br/><br/></p>
+<p>Hay mucho que podrÃ­amos hacer si pudiÃ©ramos construir mÃ¡s sistemas que estÃ©n en algÃºn punto intermedio entre la democracia y los mercados, aprovechando el igualitarismo de lo primero, la eficiencia tÃ©cnica de lo segundo y las propiedades econÃ³micas en todo el espectro entre los dos extremos. <a href="../../../2019/12/07/quadratic.html">La financiaciÃ³n cuadrÃ¡tica</a> es un excelente ejemplo de esto. La democracia lÃ­quida es otro excelente ejemplo. Incluso si no introducimos mecanismos de delegaciÃ³n o matemÃ¡ticas cuadrÃ¡ticas sofisticadas, hay mucho que podrÃ­amos hacer al votar <em>mucho mÃ¡s</em> y a escalas mÃ¡s pequeÃ±as, adaptÃ¡ndonos mejor a la informaciÃ³n disponible para cada votante. Pero el desafÃ­o con todas estas ideas es que, para tener un esquema que mantenga duraderamente <em>cualquier</em> nivel de democraticidad, necesitas alguna forma de resistencia al ataque Sybil y mitigaciÃ³n de la compra de votos: exactamente los problemas que estos sofisticados esquemas de votaciÃ³n con ZK-SNARK + MPC + blockchain estÃ¡n tratando de resolver.</p>
+<h2 id="el-espacio-cripto-puede-ayudar">El espacio cripto puede ayudar</h2>
+<p>Uno de los beneficios subestimados del espacio cripto es que es una excelente "zona econÃ³mica especial virtual" para probar ideas econÃ³micas y criptogrÃ¡ficas en un entorno altamente adversarial. Cualquier cosa que construyas y lances, una vez que el poder econÃ³mico que controla alcanza cierto tamaÃ±o, una gran cantidad de actores diversos, a veces altruistas, a veces motivados por el beneficio y a veces maliciosos, muchos de los cuales son completamente anÃ³nimos, se abalanzarÃ¡n sobre el sistema e intentarÃ¡n dirigir ese poder econÃ³mico hacia sus propios objetivos.</p>
+<p>Los incentivos para los atacantes son altos: si un atacante roba $100 de tu dispositivo criptoeconÃ³mico, a menudo pueden obtener la recompensa completa de $100, y a menudo pueden salir impunes. Pero los incentivos para los defensores tambiÃ©n son altos: si desarrollas una herramienta que ayuda a los usuarios a <em>no</em> perder sus fondos, podrÃ­as (al menos en ocasiones) convertir eso en una herramienta y ganar millones. Cripto es la zona de entrenamiento definitiva: si puedes construir algo que pueda sobrevivir en este entorno a gran escala, probablemente tambiÃ©n pueda sobrevivir en el mundo real.</p>
+<p>Esto se aplica a <a href="../../../2021/04/02/round9.html">la financiaciÃ³n cuadrÃ¡tica</a>, se aplica a <a href="https://gnosis-safe.io/">multifirmas</a> y <a href="../../../2021/01/11/recovery.html">carteras de recuperaciÃ³n social</a>, y tambiÃ©n puede aplicarse a los sistemas de votaciÃ³n. El espacio blockchain ya ha contribuido a motivar el surgimiento de tecnologÃ­as de seguridad importantes:</p>
+<ul>
+<li>Carteras de hardware</li>
+<li>Pruebas de conocimiento cero eficientes de propÃ³sito general</li>
+<li>Herramientas de verificaciÃ³n formal</li>
+<li>"TelÃ©fonos blockchain" con chips de hardware confiable</li>
+<li>Esquemas anti-Sybil como <a href="https://www.proofofhumanity.id/">Prueba de Humanidad</a></li>
+</ul>
+<p>En todos estos casos, alguna versiÃ³n de la tecnologÃ­a existÃ­a antes de que los blockchains llegaran a la escena. Pero es difÃ­cil negar que los blockchains han tenido un impacto significativo en impulsar estos esfuerzos hacia adelante, y el importante papel de los incentivos inherentes al espacio juega un papel clave en elevar las apuestas lo suficiente como para que realmente ocurra el desarrollo tecnolÃ³gico.</p>
+<h3 id="conclusiÃ³n">ConclusiÃ³n</h3>
+<p><strong>En el corto plazo, cualquier forma de votaciÃ³n en blockchain deberÃ­a permanecer confinada a pequeÃ±os experimentos</strong>, ya sea en pequeÃ±as pruebas para aplicaciones mÃ¡s convencionales o para el propio espacio blockchain. La seguridad en la actualidad definitivamente no es lo suficientemente buena como para confiar en las computadoras para todo. Pero estÃ¡ mejorando, y si estoy equivocado y la seguridad <em>no mejora</em>, no solo la votaciÃ³n en blockchain, sino tambiÃ©n las criptomonedas en su conjunto, tendrÃ¡n dificultades para tener Ã©xito. Por lo tanto, hay un gran incentivo para que la tecnologÃ­a continÃºe mejorando.</p>
+<p>Todos deberÃ­amos seguir observando la tecnologÃ­a y los esfuerzos que se realizan en todas partes para tratar de aumentar la seguridad, y gradualmente sentirnos mÃ¡s cÃ³modos utilizando la tecnologÃ­a en procesos sociales muy importantes. La tecnologÃ­a ya es clave en nuestros mercados financieros, y una cripto-izaciÃ³n de una gran parte de la economÃ­a (o incluso solo reemplazando el oro) pondrÃ¡ una parte aÃºn mayor de la economÃ­a en manos de nuestros algoritmos criptogrÃ¡ficos y el hardware que los ejecuta. DeberÃ­amos observar y apoyar este proceso cuidadosamente y, con el tiempo, aprovechar sus beneficios para llevar nuestras tecnologÃ­as de gobernanza al siglo XXI.</p>
+</meta></div> </html><div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; color: #666;">Source: https://vitalik.eth.limo/general/2021/05/25/voting2_ES.html</div></body></html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html><head><style>
+                body { 
+                    max-width: 800px; 
+                    margin: 0 auto; 
+                    padding: 20px; 
+                    font-family: Arial, sans-serif; 
+                    line-height: 1.6;
+                    color: #333;
+                }
+                img { max-width: 100%; height: auto; }
+                pre { 
+                    background-color: #f5f5f5; 
+                    padding: 15px; 
+                    overflow-x: auto;
+                    border-radius: 4px;
+                }
+                code { 
+                    background-color: #f5f5f5; 
+                    padding: 2px 5px;
+                    border-radius: 3px;
+                }
+                h1, h2, h3 { color: #2c3e50; }
+                a { color: #3498db; }
+                blockquote {
+                    border-left: 4px solid #ccc;
+                    margin: 0;
+                    padding-left: 16px;
+                }
+            </style></head><body>
+<!DOCTYPE html>
+
+<html>
+<meta charset="utf-8"/>
+<style>
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1c1c1c;
+        color: white;
+    }
+    .markdown-body table tr {
+        background-color: #1c1c1c;
+    }
+    .markdown-body table tr:nth-child(2n) {
+        background-color: black;
+    }
+}
+</style>
+<link href="../../../../feed.xml" rel="alternate" title="Situazioni di collusione" type="application/rss+xml"/>
+<link href="../../../../css/common-vendor.b8ecfc406ac0b5f77a26.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../css/fretboard.f32f2a8d5293869f0195.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../css/pretty.0ae3265014f89d9850bf.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../css/pretty-vendor.83ac49e057c3eac4fce3.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../css/global.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../css/misc.css" rel="stylesheet" type="text/css"/>
+<script type="text/x-mathjax-config">
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global',
+  }
+};
+</script>
+<script async="" id="MathJax-script" src="../../../../scripts/tex-svg.js" type="text/javascript">
+</script>
+<style>
+</style>
+<div class="container-fluid markdown-body comment-enabled" data-hard-breaks="true" id="doc">
+<div id="color-mode-switch">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<input id="switch" type="checkbox"/>
+<label for="switch">Dark Mode Toggle</label>
+<svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<script type="text/javascript">
+  // Update root html class to set CSS colors
+  const toggleDarkMode = () => {
+    const root = document.querySelector('html');
+    root.classList.toggle('dark');
+  }
+
+  // Update local storage value for colorScheme
+  const toggleColorScheme = () => {
+    const colorScheme = localStorage.getItem('colorScheme');
+    if (colorScheme === 'light') localStorage.setItem('colorScheme', 'dark');
+    else localStorage.setItem('colorScheme', 'light');
+  }
+
+  // Set toggle input handler
+  const toggle = document.querySelector('#color-mode-switch input[type="checkbox"]');
+  if (toggle) toggle.onclick = () => {
+    toggleDarkMode();
+    toggleColorScheme();
+  }
+
+  // Check for color scheme on init
+  const checkColorScheme = () => {
+    const colorScheme = localStorage.getItem('colorScheme');
+    // Default to light for first view
+    if (colorScheme === null || colorScheme === undefined) localStorage.setItem('colorScheme', 'light');
+    // If previously saved to dark, toggle switch and update colors
+    if (colorScheme === 'dark') {
+      toggle.checked = true;
+      toggleDarkMode();
+    }
+  }
+  checkColorScheme();
+</script>
+<meta content="summary" name="twitter:card"/>
+<meta content="Situazioni di collusione" name="twitter:title">
+<meta content="http://vitalik.ca/images/icon.png" name="twitter:image"/>
+<br/>
+<h1 style="margin-bottom:7px"> Situazioni di collusione </h1>
+<small style="float:left; color: #888"> 2000 Jan 01 </small>
+<small style="float:right; color: #888"><a href="../../../../index.html">See all posts</a></small>
+<br/> <br/> <br/>
+<title> Situazioni di collusione </title>
+<p><em>Un ringraziamento speciale a Glen Weyl, Phil Daian e Jinglan Wang per la revisione, e Hacktar e matteopey per la traduzione</em>.</p>
+<p>Negli ultimi anni si Ã¨ registrato un crescente interesse nell'utilizzo di incentivi economici e meccanismi deliberatamente progettati per allineare il comportamento dei partecipanti in vari contesti. Per quanto riguarda la blockchain, la struttura del meccanismo fornisce prima di tutto la sicurezza per la blockchain stessa, incoraggia i miner o validatori proof of stake a partecipare onestamente, ma piÃ¹ di recente viene applicato in <a href="https://www.augur.net/">mercati di previsione</a>, "<a href="https://medium.com/@tokencuratedregistry/a-simple-overview-of-token-curated-registries-84e2b7b19a06">registri selezionati tramite token</a>" e molti altri contesti. Il nascente <a href="https://radicalxchange.org/">movimento RadicalXChange</a> ha nel frattempo iniziato una sperimentazione con <a href="https://medium.com/@simondlr/this-artwork-is-always-on-sale-92a7d0c67f43">tasse Harberg</a>, voto quadratico, <a href="https://medium.com/gitcoin/gitcoin-grants-50k-open-source-fund-e20e09dc2110">finanziamento quadratico</a> e altro. Recentemente si Ã¨ anche registrato un crescente interesse a utilizzare incentivi basati su token per cercare di incoraggiare la diffusione di post di qualitÃ  sui social media. Tuttavia, man mano che lo sviluppo di questi sistemi passa dalla teoria alla pratica, si presenta una serie di sfide, che secondo me non sono state ancora adeguatamente considerate. Come esempio recente di questo passaggio dalla teoria alla pratica, Bihu, una piattaforma cinese, ha da poco rilasciato un meccanismo basato su moneta per incoraggiare le persone a scrivere post. Il meccanismo di base (potete consultare il white paper in cinese <a href="https://www.chainwhy.com/whitepaper/keywhitepaper.html">qui</a>) Ã¨ che se un utente della piattaforma detiene token KEY, ha la possibilitÃ  di impegnare quei token KEY in articoli; ogni utente ha a disposizione <code>k</code> "voti positivi" al giorno, e il "peso" di ogni voto Ã¨ proporzionale alla quota dall'utente che vota. Gli articoli con una maggiore quantitÃ  di quote di voti positivi appaiono in modo piÃ¹ prominente e l'autore di un articolo ottiene una ricompensa di token KEY piÃ¹ o meno proporzionale alla quantitÃ  di voti positivi KEY assegnati all'articolo. Questa in realtÃ  Ã¨ una semplificazione eccessiva e il meccanismo attuale presenta alcune non linearitÃ , che tuttavia non sono essenziali per il funzionamento di base del meccanismo. KEY ha valore perchÃ© puÃ² essere utilizzato in vari modi all'interno della piattaforma, ma in particolare una percentuale di tutte le entrate pubblicitarie viene utilizzata per acquistare e utilizzare KEY (meritano un grande applauso per aver ideato questo meccanismo e non aver realizzato l'ennesimo <a href="../../../2017/10/17/moe.html">mezzo di scambio di token</a>). Questo tipo di progetto non Ã¨ sicuramente unico al mondo; incentivare la creazione di contenuti online Ã¨ qualcosa di cui si occupano in molti, e ci sono stati molti progetti simili, e altri piuttosto diversi. Questa particolare piattaforma viene giÃ  utilizzata in modo significativo:</p>
+<p><img src="../../../../images/collusion-files/screenie.png"/></p>
+<p>Alcuni mesi fa, il subreddit trading <a href="http://reddit.com/r/ethtrader">/r/ethtrader</a> di Ethereum ha introdotto una funzione sperimentale per certi versi simile, in cui un token chiamato "donut" viene erogato agli utenti che fanno commenti che vengono votati positivamente, con una quantitÃ  prestabilita di donut rilasciata settimanalmente agli utenti in proporzione al numero di voti positivi ricevuti dai loro commenti. I donut possono essere utilizzati per acquistare la possibilitÃ  di impostare il contenuto del banner nella parte superiore del subreddit, nonchÃ© per votare nei sondaggi della community. Tuttavia, diversamente da ciÃ² che accade nel sistema KEY, in questo caso la ricompensa che B riceve quando A assegna un voto positivo a B non Ã¨ proporzionale alla fornitura di monete esistente di A; invece, ogni account Reddit ha la stessa capacitÃ  di contribuire ad altri account Reddit.</p>
+<p><img src="../../../../images/collusion-files/donuts.png"/></p>
+<p>Questo tipo di esperimenti, che tentano di premiare la creazione di contenuti di qualitÃ  in un modo che va oltre i limiti noti di donazione/microtipping, sono molto importanti; un compenso insufficiente per la creazione di contenuti Internet generati dagli utenti Ã¨ un problema molto sentito nella societÃ  in generale (provate a leggere "<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3243656">liberal radicalism</a>" e "<a href="http://radicalmarkets.com/chapters/data-as-labor/">data as labor</a>"), ed Ã¨ incoraggiante vedere che le crypto community tentano di usare il potere della progettazione per cercare una soluzione. ** Ma sfortunatamente, questi sistemi sono anche vulnerabili agli attacchi. ** <strong>Autovotazione, plutocrazia e corruzione</strong> Ecco come si potrebbe attaccare economicamente il progetto proposto sopra. Supponiamo che un utente facoltoso ottenga una quantitÃ  di token <code>N</code> e, di conseguenza, ciascuno dei <code>k</code> voti positivi dell'utente dia al destinatario una ricompensa di <code>N * q</code> (<code>q</code> qui probabilmente Ã¨ un numero molto piccolo, ad esempio provate a pensare <code>q = 0,000001</code>). L'utente semplicemente assegna voti positivi ai propri account fake, assegnandosi autonomamente una ricompensa di <code>N * k * q</code>. Quindi, il sistema semplicemente finisce per assegnare a ogni utente un "tasso di interesse" di <code>k * q</code> per periodo, e il meccanismo non ha altri scopi. Il meccanismo di Bihu, forse anticipando tutto ciÃ², ha una logica superlineare in cui gli articoli con piÃ¹ KEY con voti positivi ottengono una ricompensa sproporzionatamente maggiore, apparentemente per incoraggiare a votare positivamente per i post popolari piuttosto che votare per se stessi. Ã comune per i sistemi di governance con votazione a moneta aggiungere questo tipo di superlinearitÃ  per impedire che l'autovotazione metta a repentaglio l'intero sistema; la maggior parte degli schemi DPOS ha un numero limitato di slot delegati con ricompensa zero per chiunque non riceva abbastanza voti per unirsi a uno degli slot, con effetti simili. Questi sistemi, perÃ², introducono inevitabilmente due nuovi punti deboli:</p>
+<ul>
+<li><strong>Incoraggiano la plutocrazia</strong>, in quanto individui e cartelli molto ricchi possono comunque ottenere fondi sufficienti per autovotarsi.</li>
+<li>Possono essere aggirati da utenti che <strong><em>corrompono</em></strong> altri utenti per votarli in massa.</li>
+</ul>
+<p>Gli attacchi di corruzione possono sembrare inverosimili (chi ha mai accettato una bustarella nella vita reale?), ma in un ecosistema maturo sono molto piÃ¹ realistici di quanto sembri. Nella maggior parte dei <a href="../../../2017/12/17/voting.html">contesti in cui la corruzione ha avuto luogo</a> nell'ambito della blockchain, gli operatori usano un nuovo eufemismo per dare al concetto un volto amichevole: non Ã¨ una bustarella, Ã¨ un "pool di persone" che "condivide i dividendi". Le tangenti possono anche essere mascherate: immaginate uno scambio di criptovalute che offre zero commissioni e si sforza di realizzare un'interfaccia utente eccezionalmente fruibile, e non cerca nemmeno di ottenere profitti. Utilizza invece monete che gli utenti depositano per partecipare a diversi sistemi di voto con moneta. Vi saranno inevitabilmente persone che considereranno normale la collusione all'interno dei gruppi: si veda ad esempio un recente <a href="https://twitter.com/MapleLeafCap/status/1044958643731533825">scandalo che ha coinvolto EOS DPOS</a>:</p>
+<p><img src="../../../../images/collusion-files/mapleleaf1.png"/></p>
+<p><img src="../../../../images/collusion-files/mapleleaf2.png"/></p>
+<p>Infine, esiste la possibilitÃ  di una "bustarella negativa", vale a dire: ricatti o coercizioni, minacce di danneggiare i partecipanti se non agiscono all'interno del meccanismo in un determinato modo. Nell'esperimento /r/ethtrader, la paura che le persone <em>acquistassero</em> donut per pilotare i sondaggi di governance ha portato la community a decidere di rendere solo i donut bloccati (cioÃ¨ non scambiabili) idonei per le votazioni. C'Ã¨ tuttavia un attacco ancora piÃ¹ a basso costo dell'acquisto di donut (un attacco che puÃ² essere considerato una specie di bustarella nascosta): il <em>noleggio</em>. Se un hacker detiene giÃ  ETH, puÃ² utilizzarli come garanzia su una piattaforma come <a href="https://compound.finance/">Compound</a> per ottenere in prestito alcuni token, con il pieno diritto di utilizzare questi token per qualsiasi scopo, inclusa la partecipazione a voti, e al termine semplicemente rimandare i token al contratto di prestito per recuperare la garanzia. Tutto avviene senza dover sopportare nemmeno un secondo di esposizione al prezzo del token che ha appena usato per un voto decisivo con moneta, anche se il meccanismo di votazione con moneta include un blocco temporale (come ad esempio in Bihu). In ogni caso, le questioni relative a corruzione e al potere eccessivo che possono assumere partecipanti ricchi e con collegamenti importanti sono sorprendentemente difficili da evitare. <strong>IdentitÃ </strong> Alcuni sistemi tentano di mitigare gli aspetti plutocratici del voto con moneta utilizzando un sistema d'identitÃ . Nel caso del sistema /r/ethtrader con donut, ad esempio, anche se <em>i sondaggi di governance</em> sono effettuati tramite un voto con moneta, il meccanismo che determina <em>quanti donut (cioÃ¨ monete) si ottengono</em> si basa sugli account Reddit: 1 voto positivo da 1 account Reddit = N donut guadagnati. L'obiettivo ideale di un sistema di identitÃ  Ã¨ rendere relativamente facile per gli individui ottenere un'identitÃ , ma relativamente difficile ottenerne molte. Nel sistema di donut /r/ethtrader vengono utilizzati gli account Reddit, nel corrispondente CLR Gitcoin si utilizzano allo stesso scopo gli account Github. Ma l'identitÃ , almeno nel modo in cui Ã¨ stata implementata finora, Ã¨ qualcosa di fragile...</p>
+<p><img src="../../../../images/collusion-files/clickfarm.png"/></p>
+<p>Siete troppo pigri per fare incetta di telefoni? Allora forse vi serve <a href="http://buyaccs.com/">questo</a>:</p>
+<p><img src="../../../../images/collusion-files/buyaccs.png"/></p>
+<p><em>Vale il solito avvertimento su come questi siti possano o meno essere truffaldini: fate le vostre ricerche e state attenti.</em></p>
+<p>Ã possibile che attaccare questi meccanismi semplicemente controllando migliaia di identitÃ  false, come dei burattinai, sia <em>persino piÃ¹ facile</em> di doversi arrabattare per corrompere persone. Credete forse che la risposta sia semplicemente aumentare la sicurezza fino ad arrivare a usare documenti di identitÃ  <em>ufficiali</em>? Bene, se volete accaparrarvene qualcuno, potete iniziare a dare un'occhiata <a href="https://thehiddenwiki.com/Main_Page">qui</a>, ma tenete presente che ci sono organizzazioni criminali specializzate che sono molto piÃ¹ avanti di voi e, anche se tutte quelle sotterranee sono state chiuse, i governi ostili creeranno sicuramente milioni di passaporti falsi se siamo abbastanza stupidi da realizzare sistemi che rendono redditizio questo tipo di attivitÃ . E questo senza nemmeno menzionare gli attacchi nella direzione opposta, le istituzioni emittenti di identitÃ  che cercano di privare di potere le comunitÃ  marginali <em>negando loro</em> i documenti di identitÃ ... Collusione. Dato che cosÃ¬ tanti meccanismi sembrano fallire allo stesso modo quando entrano in causa piÃ¹ identitÃ  o anche mercati liquidi, ci si potrebbe chiedere: c'Ã¨ qualche elemento comune che causa tutti questi problemi? Direi che la risposta Ã¨ affermativa, e l'"elemento comune" Ã¨ questo: Ã¨ molto piÃ¹ difficile, e probabilmente completamente impossibile, realizzare meccanismi che mantengano proprietÃ  desiderabili in un modello in cui i partecipanti sono in grado di cospirare, piuttosto che in uno dove non possono farlo. La maggior parte di voi probabilmente ha giÃ  capito di cosa sto parlando; esempi specifici di questo principio sono alla base di norme consolidate, spesso leggi, che promuovono la concorrenza sul mercato e vietano cartelli che fissano i prezzi, la compravendita di voti e la corruzione. Ma il problema Ã¨ molto piÃ¹ profondo e piÃ¹ generalizzato. Nella versione della teoria dei giochi che si concentra sulla scelta individuale (cioÃ¨ la versione che presuppone che ogni partecipante prenda decisioni in modo indipendente e che non consenta la possibilitÃ  che gruppi di agenti agiscano come un'unica entitÃ  per il proprio vantaggio reciproco) ci sono <a href="https://en.wikipedia.org/wiki/Nash_equilibrium#Proof_of_existence">prove matematiche</a> che in ogni gioco deve esistere almeno un equilibrio stabile di Nash e che chi crea i meccanismi abbia un'influenza molto forte sulla "progettazione" dei giochi al fine di ottenere risultati specifici. Ma nella versione della teoria dei giochi che consente la possibilitÃ  che le coalizioni lavorino insieme, detta <em>teoria dei giochi cooperativi</em>, ** ci sono ** <a href="https://en.wikipedia.org/wiki/Bondareva%E2%80%93Shapley_theorem"><strong>ampie classi di giochi</strong></a>** che non hanno esiti stabili da cui una coalizione non possa deviare in modo proficuo**. <em>Giochi di maggioranza</em>, formalmente descritti come giochi di <code>N</code> agenti in cui qualsiasi sottoinsieme di piÃ¹ della metÃ  di loro puÃ² ottenere una ricompensa fissa e dividerla al proprio interno; molte situazioni di governance aziendali, di politica e altri casi che si verificano nella vita di tutti i giorni fanno <a href="https://web.archive.org/web/20180329012328/https://www.math.mcgill.ca/vetta/CS764.dir/Core.pdf">parte di questo set di giochi intrinsecamente instabili</a>. In altre parole, se esiste una situazione con un pool fisso di risorse e un meccanismo stabilito per distribuire tali risorse, ed Ã¨ inevitabilmente possibile per il 51% dei partecipanti cospirare per prendere il controllo delle risorse, indipendentemente dalla situazione attuale puÃ² sempre emergere una cospirazione che risulti redditizia per i partecipanti. Tuttavia, tale cospirazione sarebbe a sua volta vulnerabile a nuove potenziali cospirazioni, ivi compresa forse una combinazione di cospiratori e vittime precedenti... e cosÃ¬ via.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Turno</th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>1/3</td>
+<td>1/3</td>
+<td>1/3</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>1/2</td>
+<td>1/2</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>2/3</td>
+<td>0</td>
+<td>1/3</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>0</td>
+<td>1/3</td>
+<td>2/3</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Questo fatto, l'instabilitÃ  dei giochi di maggioranza secondo la teoria dei giochi cooperativi, Ã¨ probabilmente molto sottovalutato come modello matematico generale semplificato del perchÃ© potrebbe non esserci una "fine della storia" in politica e un sistema che si riveli pienamente soddisfacente. Personalmente credo che sia molto piÃ¹ utile del piÃ¹ famoso </strong> <a href="https://en.wikipedia.org/wiki/Arrow%27s_impossibility_theorem"><strong>teorema di Arrow</strong></a> <strong>, per esempio. </strong> Esistono due modi per aggirare questo problema. Il primo Ã¨ cercare di limitarci alla classe di giochi che siano <em>realmente</em> "privi di identitÃ " e "a prova di collusione", dove non dobbiamo preoccuparci nÃ© di tangenti nÃ© di identitÃ . Il secondo Ã¨ tentare di attaccare direttamente i problemi legati all'identitÃ  e alla collusione, e risolverli abbastanza bene da poter implementare giochi non a prova di collusione, con le maggiori proprietÃ  che questa condizione puÃ² offrire. <strong>Progettazione di giochi privi di identitÃ  e a prova di collusione </strong> La classe di giochi privi di identitÃ  e a prova di collusione Ã¨ considerevole. Anche il proof of work Ã¨ a prova di collusione fino al limite di un singolo attore con <a href="https://arxiv.org/abs/1507.06183">~23,21% degli hash totali</a>, e questo limite puÃ² essere aumentato fino al 50% con una</p>
+progettazione intelligente&lt;/1 &gt;. I mercati competitivi sono ragionevolmente a prova di collusione fino a un limite relativamente alto, che Ã¨ facilmente raggiungibile in alcuni casi, ma non in altri. Nel caso della <em>governance</em> e della <em>selezione di contenuti</em> (i quali sono entrambi solo casi speciali del problema generale, dato dalla capacitÃ  di identificare buoni e cattivi), un'importante classe di meccanismi che funziona bene Ã¨ la <a href="https://blog.ethereum.org/2014/08/21/introduction-futarchy/"><em>futarchia</em></a>, in genere definita come "governance in base al mercato della previsione", sebbene direi che anche l'uso di depositi cauzionali si situi fondamentalmente nella stessa classe di tecniche. Il modo in cui i meccanismi di futarchia, nella loro forma piÃ¹ generale, lavorano Ã¨ dato dal fatto che rendono il "votare" non solo un'espressione di opinione, ma anche una <em>previsione</em>, con una ricompensa per le previsioni che si rivelano vere e una sanzione per quelle che si rivelano sbagliate. Ad esempio, <a href="https://ethresear.ch/t/prediction-markets-for-content-curation-daos/1312">la mia proposta</a> di "mercati previsionali per il DAO di selezione di contenuti" suggerisce una progettazione semi-centralizzata, dove chiunque puÃ² votare positivamente o negativamente i contenuti inviati, dove i contenuti con piÃ¹ voti positivi sono piÃ¹ visibili, e dove Ã¨ presente anche un "comitato moderatore" che prende le decisioni finali. Per ogni post, c'Ã¨ una piccola probabilitÃ  (proporzionale al volume totale di voti positivi e negativi a quel post) che il comitato moderatore sia chiamato a prendere una decisione definitiva sul post. Se il comitato moderatore approva un post, tutti coloro che lo hanno votato positivamente sono ricompensati, mentre chi ha votato negativamente viene penalizzato; se il comitato moderatore disapprova un post accade il contrario. Questo meccanismo incoraggia i partecipanti a dare voti positivi e negativi con l'intento di "prevedere" il giudizio del comitato moderatore. Un altro possibile esempio di futarchia Ã¨ un sistema di governance per un progetto con un token, dove chi vota a favore di una decisione sia obbligato ad acquistare una certa quantitÃ  di token al prezzo fissato al momento dell'inizio della votazione se il voto risulta vincente; questo fa sÃ¬ che un voto per una decisione sbagliata sia costoso, e nel limite, se una cattiva decisione ottiene un voto, chiunque abbia approvato la decisione deve essenzialmente rilevare tutti gli altri partecipanti al progetto. Questo garantisce che un singolo voto per una decisione "sbagliata" possa essere molto costoso per chi l'ha espresso, precludendo la possibilitÃ  di attacchi di corruzione a basso costo.
+
+<p><img src="https://ethresear.ch/uploads/default/original/2X/4/4236db5226633dcc00bb4924f55db33488707488.png"/></p>
+<ul>
+<li>Una descrizione grafica di una forma di futarchia, dove vengono creati due mercati che rappresentano i due "possibili mondi futuri" e viene scelto quello con un prezzo piÃ¹ favorevole. Fonte* <a href="https://ethresear.ch/uploads/default/original/2X/4/4236db5226633dcc00bb4924f55db33488707488.png"><em>questo post su ethresear.ch</em></a></li>
+</ul>
+<p>Tuttavia, vi Ã¨ un limite a ciÃ² che questi meccanismi possono fare. Nel caso dell'esempio di selezione dei contenuti appena descritto, non stiamo realmente risolvendo la governance, stiamo solo <em>scalando</em> la funzionalitÃ  di un gadget di governance che si presume sia giÃ  attendibile. Si potrebbe cercare di sostituire il comitato moderatore con un mercato di previsione sul prezzo di un token che rappresenta il diritto di acquistare spazio pubblicitario, ma nella realtÃ  i prezzi sono un indicatore troppo forte per rendere tale processo attuabile per un numero molto limitato di decisioni di ampia portata. E spesso il valore che cerchiamo di massimizzare Ã¨ esplicitamente qualcosa di diverso dal valore massimo di una moneta. Diamo un'occhiata piÃ¹ esplicita sul perchÃ©, in un caso piÃ¹ generale in cui non sia facile determinare il valore di una decisione di governance attraverso il suo impatto sul prezzo di un token, i buoni meccanismi per l'identificazione del bene e del male pubblico non possono purtroppo essere senza identitÃ  o a prova di collusione. Se si cerca di preservare la capacitÃ  di un gioco di essere privo di identitÃ  costruendo un sistema in cui le identitÃ  non contano e solo le monete contano, <strong>si verifica un compromesso impossibile tra l'incapacitÃ  di incentivare i beni pubblici legittimi e l'appoggio eccessivo della plutocrazia</strong>. L'argomentazione Ã¨ la seguente. Supponiamo che un autore stia producendo un bene pubblico (ad esempio un blog con una serie di post) che fornisce valore a ogni membro di una community di 10000 persone. Supponiamo che esista un meccanismo per cui i membri della community possono intraprendere un'azione che fa sÃ¬ che l'autore riceva un guadagno di $1. A meno che i membri della comunitÃ  siano <em>estremamente</em> altruistici, perchÃ© il meccanismo funzioni, il costo di questa azione deve essere di gran lunga inferiore a $1, altrimenti la parte del beneficio ottenuta dal membro della community che sostiene l'autore sarebbe molto inferiore al costo richiesto per sostenere l'autore, e cosÃ¬ il sistema diventerebbe una <a href="https://en.wikipedia.org/wiki/Tragedy_of_the_commons">tragedia dei luoghi comuni</a> in cui nessuno supporta l'autore. Pertanto, deve esistere un modo per far guadagnare all'autore $1 a un costo di gran lunga inferiore a $1. Ma ora supponiamo che esista anche una community fasulla, composta da 10000 account fake di un solo facoltoso hacker. Questa community svolge esattamente le stesse azioni di quella reale, ma anzichÃ© sostenere l'autore, sostiene <em>un altro</em> account fake, anch'esso di proprietÃ  dell'hacker. Se fosse possibile per un membro della "vera community" dare all'autore $1 a un costo personale molto inferiore a $1, sarebbe possibile anche per l'hacker dare a <em>se stesso</em> $1 a un costo molto inferiore a $1 per tutte le volte che desidera, finendo per esaurire i fondi del sistema. Qualsiasi meccanismo che possa aiutare parti veramente poco coordinate a coordinarsi senza le giuste tutele aiuterÃ  anche le parti giÃ  coordinate (ad esempio molti account controllati dalla stessa persona) a <em>coordinarsi ancora di piÃ¹</em>, sottraendo denaro al sistema. La problematica Ã¨ analoga quando l'obiettivo non Ã¨ finanziare, ma stabilire quale contenuto deve essere piÃ¹ visibile. Quale contenuto pensate possa ottenere piÃ¹ valore in dollari: un articolo di blog di qualitÃ  legittimamente alta utile a migliaia di persone, ma la cui utilitÃ  per ogni singolo individuo Ã¨ relativamente scarsa, o questo?</p>
+<p><img src="../../../../images/collusion-files/cocacola.jpg"/></p>
+<p>O forse questo?</p>
+<p><img src="../../../../images/collusion-files/bitconnect.png"/></p>
+<p>Chi ha seguito i recenti avvenimenti di politica "nel mondo reale" potrebbe anche segnalare un altro tipo di contenuto, che va a vantaggio di attori altamente centralizzati: la manipolazione dei social media da parte di governi ostili. In ultima analisi, sia i sistemi centralizzati che quelli decentrati si trovano ad affrontare lo stesso problema di fondo, cioÃ¨ che il <strong>"mercato delle idee" (e dei beni pubblici piÃ¹ in generale) Ã¨ molto lontano dall'essere un "mercato efficiente" con il significato normalmente attribuito al termine dagli economisti</strong>, e questo porta sia a una produzione limitata di beni pubblici anche in "tempo di pace", che alla vulnerabilitÃ  ad attacchi attivi. Ã veramente un problema grave. Ã anche il motivo per cui sistemi di voto basati su moneta (come Bihu) hanno un grande vantaggio rispetto ai sistemi basati sull'identitÃ  (come Gitcoin CLR o l'esperimento con donut di /r/ethtrader): almeno non c'Ã¨ interesse ad acquistare account in massa perchÃ© tutto quello che si fa Ã¨ proporzionale al numero di monete che si possiede, a prescindere dal numero di account sui quali queste sono suddivise. Tuttavia, meccanismi che non si basino su alcun modello di identitÃ  e che si affidino esclusivamente alle monete non possono risolvere il problema degli interessi concentrati che surclassano le piccole community che cercano di sostenere i beni pubblici; un meccanismo privo di identitÃ  che dÃ  poteri alle comunitÃ  distribuite non puÃ² evitare di assegnare potere eccessivo ai plutocrati centralizzati che si fingono comunitÃ  distribuite. I beni pubblici perÃ² non sono solo vulnerabili ai problemi di identitÃ , ma anche alla corruzione. Per capire perchÃ©, considerate nuovamente l'esempio qui sopra, dove invece della "community fasulla" con 10001 account fake dell'hacker, l'aggressore ha solo un'identitÃ , l'account che riceve finanziamenti, e gli altri 10000 account sono utenti reali, ma utenti che ricevono una tangente di $0,1 ciascuno per eseguire l'azione che farebbe guadagnare all'hacker un ulteriore $1. Come giÃ  accennato, queste tangenti possono essere incredibilmente nascoste, anche attraverso servizi di custodia di terzi che votano per conto di un utente in cambio di convenienza; nel caso di strutture con "voto tramite moneta" Ã¨ ancora piÃ¹ facile nascondere le tangenti: si possono noleggiare monete sul mercato e utilizzarle per partecipare al voto. CosÃ¬, mentre alcuni tipi di giochi, in particolare il mercato delle previsioni o i giochi basati su deposito cauzionale, possono essere realizzati a prova di collusione e privi di identitÃ , Il finanziamento generalizzato di beni pubblici sembra essere una categoria di problema in cui purtroppo non Ã¨ possibile adottare approcci a prova di collusione e privi di identitÃ . <strong>Resistenza alla collusione e identitÃ </strong> L'alternativa consiste nel prendere il problema di petto. Come giÃ  detto, passare semplicemente a sistemi di identitÃ  centralizzati di sicurezza superiore, come passaporti e altri documenti di identitÃ  ufficiali, non funzionerÃ  su larga scala; in un contesto sufficientemente incentivato sono molto insicuri e vulnerabili agli stessi governi che li emettono. In realtÃ , il tipo di "identitÃ " di cui parliamo qui Ã¨ una sorta di gruppo di attestazioni, robusto e a piÃ¹ fattori, il cui scopo Ã¨ dimostrare che un attore identificato da un gruppo di messaggi Ã¨ effettivamente una persona unica. Un proto-modello molto precoce di questo tipo di identitÃ  in rete Ã¨ discutibilmente il recupero sociale di chiavi nei telefoni blockchain di HTC:</p>
+<p><img src="../../../../images/collusion-files/htcphone.jpg"/></p>
+<p>L'idea di base Ã¨ che la vostra chiave privata sia suddivisa in segreto tra un massimo di cinque contatti affidabili, in modo tale da garantire in modo matematico che tre di loro siano in grado di recuperare la chiave originale, ma almeno due non possano. Si tratta di un "sistema di identitÃ ": sono i vostri cinque amici che determineranno se chi sta cercando di recuperare il vostro account siete proprio voi. Si tratta perÃ² di un sistema di identitÃ  a scopi speciali, che cerca di risolvere un problema (la sicurezza degli account personali) diverso (e piÃ¹ semplice) dal tentativo di identificare esseri umani unici. Detto questo, il modello generale che prevede individui che fanno dichiarazioni su altri individui puÃ² essere ampliato in una sorta di modello di identitÃ  piÃ¹ robusto. Questi sistemi potrebbero essere aumentati, se si desidera, utilizzando il meccanismo di "futarchia" descritto in precedenza: se qualcuno afferma che un altro Ã¨ un essere umano unico, qualcun altro non Ã¨ d'accordo ed entrambe le parti sono disposte a impegnarsi per dirimere la controversia, il sistema puÃ² convocare una commissione di giudici che decida chi ha ragione. Ma vogliamo anche un'altra condizione di fondamentale importanza: vogliamo un'identitÃ  che non si possa credibilmente noleggiare o vendere. Ovviamente, non possiamo impedire alle persone di fare un accordo "tu mi invii $50", io ti mando la mia chiave", ma quello che <em>possiamo</em> cercare di fare Ã¨ evitare che tali accordi siano <em>credibili</em>, in modo che il venditore non possa ingannare facilmente l'acquirente e inviargli una chiave che non funziona. Un modo per raggiungere questo risultato Ã¨ creare un meccanismo con il quale il proprietario possa inviare una transazione che revochi la chiave e la sostituisca con un'altra chiave di sua scelta, in un modo che non possa essere dimostrato. Forse il modo piÃ¹ semplice per raggiungere l'obiettivo Ã¨ usare una parte fidata che esegua il calcolo e pubblichi solo i risultati (insieme a prove di conoscenza zero che dimostrino i risultati, cosÃ¬ la parte fidata Ã¨ affidabile solo per la privacy, non per l'integritÃ ) o decentralizzare la stessa funzionalitÃ  attraverso un <a href="https://blog.ethereum.org/2014/12/26/secret-sharing-daos-crypto-2-0/">calcolo a piÃ¹ parti</a>. Questo tipo di approccio non risolverÃ  completamente il problema della collusione (un gruppo di amici potrebbe ancora riunirsi e coordinare i voti) ma lo ridurrÃ  almeno in misura gestibile per non portare al completo fallimento di questi sistemi. C'Ã¨ anche un altro problema: la distribuzione iniziale della chiave. Cosa succede se un utente crea la propria identitÃ  all'interno di un servizio di custodia di terzi che poi archivia la chiave privata e la usa per votare in modo clandestino? Si tratterebbe di corruzione implicita, il potere di voto dell'utente in cambio di un servizio comodo per l'utente, e per di piÃ¹, se il sistema Ã¨ sicuro in quanto riesce ad evitare la corruzione rendendo i voti non provabili, <em>anche</em> il voto clandestino da parte di host terzi non sarebbe rilevabile. L'unico approccio per aggirare il problema sembrerebbe essere.... la verifica di persona. Ad esempio, si potrebbe creare un ecosistema di"emittenti" in cui ogni emittente rilasci smart card con chiavi private, che l'utente puÃ² scaricare immediatamente sul proprio smartphone; l'utente potrebbe poi inviare un messaggio per sostituire la chiave con una diversa che non rivelerÃ  a nessuno. Questi emittenti potrebbero essere conoscenti o potenzialmente individui giÃ  considerati affidabili tramite determinati meccanismi di voto. Realizzare l'infrastruttura per rendere possibili meccanismi a prova di collusione, che includano solidi sistemi di identitÃ  decentrati, Ã¨ una sfida difficile, ma se vogliamo sbloccare il potenziale di tali meccanismi, sembra inevitabile che dobbiamo fare del nostro meglio per provare. Ã vero che l'attuale dogma della sicurezza informatica, ad esempio per introdurre il voto online, Ã¨ semplicemente "<a href="https://www.geekwire.com/2018/online-voting-dont-experts-say-report-americas-election-system-security/">non si fa</a>", ma se vogliamo espandere il ruolo dei meccanismi di voto, comprese forme piÃ¹ avanzate come il voto quadratico e la finanza quadratica, ad un maggior numero di ruoli, non abbiamo altra scelta se non affrontare di petto la sfida, tentare e ritentare, sperando di riuscire a realizzare qualcosa di abbastanza sicuro, almeno per alcuni casi di utilizzo.</p>
+</meta></div> </html><div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; color: #666;">Source: https://vitalik.eth.limo/general/2000/01/01/On_Collusion_IT.html</div></body></html>

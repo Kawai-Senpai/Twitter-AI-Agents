@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html><head><style>
+                body { 
+                    max-width: 800px; 
+                    margin: 0 auto; 
+                    padding: 20px; 
+                    font-family: Arial, sans-serif; 
+                    line-height: 1.6;
+                    color: #333;
+                }
+                img { max-width: 100%; height: auto; }
+                pre { 
+                    background-color: #f5f5f5; 
+                    padding: 15px; 
+                    overflow-x: auto;
+                    border-radius: 4px;
+                }
+                code { 
+                    background-color: #f5f5f5; 
+                    padding: 2px 5px;
+                    border-radius: 3px;
+                }
+                h1, h2, h3 { color: #2c3e50; }
+                a { color: #3498db; }
+                blockquote {
+                    border-left: 4px solid #ccc;
+                    margin: 0;
+                    padding-left: 16px;
+                }
+            </style></head><body>
+<!DOCTYPE html>
+
+<html>
+<meta charset="utf-8"/>
+<style>
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1c1c1c;
+        color: white;
+    }
+    .markdown-body table tr {
+        background-color: #1c1c1c;
+    }
+    .markdown-body table tr:nth-child(2n) {
+        background-color: black;
+    }
+}
+</style>
+<link href="../feed.xml" rel="alternate" title="Cryptography" type="application/rss+xml"/>
+<link href="../css/common-vendor.b8ecfc406ac0b5f77a26.css" rel="stylesheet" type="text/css"/>
+<link href="../css/fretboard.f32f2a8d5293869f0195.css" rel="stylesheet" type="text/css"/>
+<link href="../css/pretty.0ae3265014f89d9850bf.css" rel="stylesheet" type="text/css"/>
+<link href="../css/pretty-vendor.83ac49e057c3eac4fce3.css" rel="stylesheet" type="text/css"/>
+<link href="../css/global.css" rel="stylesheet" type="text/css"/>
+<link href="../css/misc.css" rel="stylesheet" type="text/css"/>
+<script type="text/x-mathjax-config">
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']]
+  },
+  svg: {
+    fontCache: 'global',
+  }
+};
+</script>
+<script async="" id="MathJax-script" src="../scripts/tex-svg.js" type="text/javascript">
+</script>
+<style>
+</style>
+<div class="container-fluid markdown-body comment-enabled" data-hard-breaks="true" id="doc">
+<div id="color-mode-switch">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<input id="switch" type="checkbox"/>
+<label for="switch">Dark Mode Toggle</label>
+<svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<script type="text/javascript">
+  // Update root html class to set CSS colors
+  const toggleDarkMode = () => {
+    const root = document.querySelector('html');
+    root.classList.toggle('dark');
+  }
+
+  // Update local storage value for colorScheme
+  const toggleColorScheme = () => {
+    const colorScheme = localStorage.getItem('colorScheme');
+    if (colorScheme === 'light') localStorage.setItem('colorScheme', 'dark');
+    else localStorage.setItem('colorScheme', 'light');
+  }
+
+  // Set toggle input handler
+  const toggle = document.querySelector('#color-mode-switch input[type="checkbox"]');
+  if (toggle) toggle.onclick = () => {
+    toggleDarkMode();
+    toggleColorScheme();
+  }
+
+  // Check for color scheme on init
+  const checkColorScheme = () => {
+    const colorScheme = localStorage.getItem('colorScheme');
+    // Default to light for first view
+    if (colorScheme === null || colorScheme === undefined) localStorage.setItem('colorScheme', 'light');
+    // If previously saved to dark, toggle switch and update colors
+    if (colorScheme === 'dark') {
+      toggle.checked = true;
+      toggleDarkMode();
+    }
+  }
+  checkColorScheme();
+</script>
+<meta content="summary" name="twitter:card"/>
+<meta content="Cryptography" name="twitter:title">
+<meta content="http://vitalik.ca/images/icon.png" name="twitter:image"/>
+<title> Cryptography </title>
+<br/>
+<center><h1 style="border-bottom:0px"> Cryptography </h1></center>
+<center><hr/>
+<span class="toc-category" style="font-size:81%"><a href="../categories/blockchains.html">Blockchains</a></span>
+<span class="toc-category" style="font-size:75%"><a href="../categories/cryptography.html">Cryptography</a></span>
+<span class="toc-category" style="font-size:100%"><a href="../categories/economics.html">Economics</a></span>
+<span class="toc-category" style="font-size:100%"><a href="../categories/fun.html">Fun</a></span>
+<span class="toc-category" style="font-size:100%"><a href="../categories/general.html">General</a></span>
+<span class="toc-category" style="font-size:100%"><a href="../categories/gitcoin.html">Gitcoin</a></span>
+<span class="toc-category" style="font-size:100%"><a href="../categories/math.html">Math</a></span>
+<span class="toc-category" style="font-size:90%"><a href="../categories/philosophy.html">Philosophy</a></span>
+<span class="toc-category" style="font-size:75%"><a href="../categories/translations.html">Translations</a></span>
+<hr/></center>
+<br/>
+<ul class="post-list" style="padding-left:0">
+<li>
+<span class="post-meta">2024 Sep 02</span>
+<h3 style="margin-top:12px">
+<a class="post-link" href="../general/2024/09/02/gluecp.html">Glue and coprocessor architectures</a>
+</h3>
+</li>
+<li>
+<span class="post-meta">2024 Jul 23</span>
+<h3 style="margin-top:12px">
+<a class="post-link" href="../general/2024/07/23/circlestarks.html">Exploring circle STARKs</a>
+</h3>
+</li>
+<li>
+<span class="post-meta">2024 Apr 29</span>
+<h3 style="margin-top:12px">
+<a class="post-link" href="../general/2024/04/29/binius.html">Binius: highly efficient proofs over binary fields</a>
+</h3>
+</li>
+<li>
+<span class="post-meta">2024 Feb 09</span>
+<h3 style="margin-top:12px">
+<a class="post-link" href="../general/2024/02/09/securityquestions.html">Ask security questions</a>
+</h3>
+</li>
+<li>
+<span class="post-meta">2022 Sep 17</span>
+<h3 style="margin-top:12px">
+<a class="post-link" href="../general/2022/09/17/layer_3.html">What kind of layer 3s make sense?</a>
+</h3>
+</li>
+<li>
+<span class="post-meta">2022 Jun 15</span>
+<h3 style="margin-top:12px">
+<a class="post-link" href="../general/2022/06/15/using_snarks.html">Some ways to use ZK-SNARKs for privacy</a>
+</h3>
+</li>
+<li>
+<span class="post-meta">2022 Mar 14</span>
+<h3 style="margin-top:12px">
+<a class="post-link" href="../general/2022/03/14/trustedsetup.html">How do trusted setups work?</a>
+</h3>
+</li>
+<li>
+<span class="post-meta">2021 Nov 05</span>
+<h3 style="margin-top:12px">
+<a class="post-link" href="../general/2021/11/05/halo.html">Halo and more: exploring incremental verification and SNARKs without pairings</a>
+</h3>
+</li>
+<li>
+<span class="post-meta">2021 Jun 18</span>
+<h3 style="margin-top:12px">
+<a class="post-link" href="../general/2021/06/18/verkle.html">Verkle trees</a>
+</h3>
+</li>
+<li>
+<span class="post-meta">2021 Jan 26</span>
+<h3 style="margin-top:12px">
+<a class="post-link" href="../general/2021/01/26/snarks.html">An approximate introduction to how zk-SNARKs are possible</a>
+</h3>
+</li>
+<li>
+<span class="post-meta">2020 Jul 20</span>
+<h3 style="margin-top:12px">
+<a class="post-link" href="../general/2020/07/20/homomorphic.html">Exploring Fully Homomorphic Encryption</a>
+</h3>
+</li>
+<li>
+<span class="post-meta">2020 Mar 21</span>
+<h3 style="margin-top:12px">
+<a class="post-link" href="../general/2020/03/21/garbled.html">A Quick Garbled Circuits Primer</a>
+</h3>
+</li>
+<li>
+<span class="post-meta">2019 Nov 22</span>
+<h3 style="margin-top:12px">
+<a class="post-link" href="../general/2019/11/22/progress.html">Hard Problems in Cryptocurrency: Five Years Later</a>
+</h3>
+</li>
+<li>
+<span class="post-meta">2019 Oct 01</span>
+<h3 style="margin-top:12px">
+<a class="post-link" href="../general/2019/10/01/story.html">In-person meatspace protocol to prove unconditional possession of a private key</a>
+</h3>
+</li>
+<li>
+<span class="post-meta">2019 Sep 22</span>
+<h3 style="margin-top:12px">
+<a class="post-link" href="../general/2019/09/22/plonk.html">Understanding PLONK</a>
+</h3>
+</li>
+<li>
+<span class="post-meta">2019 May 12</span>
+<h3 style="margin-top:12px">
+<a class="post-link" href="../general/2019/05/12/fft.html">Fast Fourier Transforms</a>
+</h3>
+</li>
+<li>
+<span class="post-meta">2018 Jul 21</span>
+<h3 style="margin-top:12px">
+<a class="post-link" href="../general/2018/07/21/starks_part_3.html">STARKs, Part 3: Into the Weeds</a>
+</h3>
+</li>
+<li>
+<span class="post-meta">2017 Nov 22</span>
+<h3 style="margin-top:12px">
+<a class="post-link" href="../general/2017/11/22/starks_part_2.html">STARKs, Part II: Thank Goodness It's FRI-day</a>
+</h3>
+</li>
+<li>
+<span class="post-meta">2017 Nov 09</span>
+<h3 style="margin-top:12px">
+<a class="post-link" href="../general/2017/11/09/starks_part_1.html">STARKs, Part I: Proofs with Polynomials</a>
+</h3>
+</li>
+<li>
+<span class="post-meta">2017 Feb 01</span>
+<h3 style="margin-top:12px">
+<a class="post-link" href="../general/2017/02/01/zk_snarks.html">[Mirror] Zk-SNARKs: Under the Hood</a>
+</h3>
+</li>
+<li>
+<span class="post-meta">2017 Jan 14</span>
+<h3 style="margin-top:12px">
+<a class="post-link" href="../general/2017/01/14/exploring_ecp.html">[Mirror] Exploring Elliptic Curve Pairings</a>
+</h3>
+</li>
+<li>
+<span class="post-meta">2016 Dec 10</span>
+<h3 style="margin-top:12px">
+<a class="post-link" href="../general/2016/12/10/qap.html">[Mirror] Quadratic Arithmetic Programs: from Zero to Hero</a>
+</h3>
+</li>
+</ul> </meta></div></html><div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; color: #666;">Source: https://vitalik.eth.limo/categories/cryptography.html</div></body></html>
