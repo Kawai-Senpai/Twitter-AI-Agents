@@ -1,6 +1,7 @@
 import asyncio
 import random
-import httpx  # For async HTTP calls
+import httpx
+import traceback
 from typing import Dict, Any
 from ultraconfiguration import UltraConfig
 from ultraprint.logging import logger
@@ -10,11 +11,14 @@ from twitter.twitter import post_tweet
 
 #! Initialize ---------------------------------------------------------------
 config = UltraConfig('config.json')
-log = logger('chat_log', 
+log = logger('agent_log', 
             filename='debug/chat.log', 
             include_extra_info=config.get("logging.include_extra_info", False), 
             write_to_file=config.get("logging.write_to_file", False), 
             log_level=config.get("logging.development_level", "DEBUG") if environment == 'development' else config.get("logging.production_level", "INFO"))
+
+#? Configuration constants --------------------------------------------------------
+HTTP_TIMEOUT = 30.0  # seconds
 
 #? API caller function -----------------------------------------------------------
 async def call_api(prompt: str, client: httpx.AsyncClient) -> str:
@@ -24,6 +28,10 @@ async def call_api(prompt: str, client: httpx.AsyncClient) -> str:
     url = f"{aiml_service_url}/chat/agent/{session_id}"
     
     try:
+        log.debug(f"Making API call to {url}")
+        log.debug(f"Session ID: {session_id}, Agent ID: {agent_id}")
+        log.debug(f"Prompt: {prompt}")
+        
         payload = {"message": prompt}
         params = {
             "agent_id": agent_id,
@@ -32,12 +40,31 @@ async def call_api(prompt: str, client: httpx.AsyncClient) -> str:
             "include_rich_response": "False"
         }
         
-        response = await client.post(url, json=payload, params=params)
+        log.debug(f"Request params: {params}")
+        
+        # Use a custom timeout with read disabled
+        custom_timeout = httpx.Timeout(connect=60.0, read=None, write=60.0, pool=60.0)
+        
+        response = await client.post(
+            url, 
+            json=payload, 
+            params=params,
+            timeout=custom_timeout
+        )
+        log.debug(f"API Response status: {response.status_code}")
+        
         response.raise_for_status()
         data = response.json()
+        log.debug(f"API Response data: {data}")
+        
+        if not data.get("response"):
+            log.warning("API returned empty response")
+            return ""
+            
         return data.get("response", "")
     except Exception as e:
         log.error(f"Error calling API: {e}")
+        log.error(f"Traceback:\n{traceback.format_exc()}")
         return ""
 
 #? Helper to format tweet text -----------------------------------------------------
@@ -53,28 +80,47 @@ def format_tweet(content: str) -> str:
 #? Main function to generate and optionally post a tweet ---------------------------
 async def generate_and_post_tweet(post_to_twitter: bool = False, client: httpx.AsyncClient = None) -> Dict[str, Any]:
     """Generate a tweet in Vitalik's style via an API call and optionally post it."""
-
-    style = random.choice(config.get("tweet_styles", ["future_prediction"]))
-    seed_topic = random.choice(config.get("seed_topics", ["Ethereum scaling solutions"]))
-    
-    prompt = (f"Write a tweet in the style of Vitalik Buterin ({style}) about "
-            f"{seed_topic}. Use a mix of technical insight and philosophical observation.")
-    
-    tweet_response = await call_api(prompt, client)
-    tweet = format_tweet(tweet_response)
-    result = {
-        "tweet": tweet,
-        "topic": seed_topic,
-        "style": style,
-        "character_count": len(tweet)
-    }
-    if post_to_twitter:
-        result["twitter_response"] = post_tweet(tweet)
-    return result
+    try:
+        style = random.choice(config.get("tweet_styles", ["future_prediction"]))
+        seed_topic = random.choice(config.get("seed_topics", ["Ethereum scaling solutions"]))
+        
+        log.debug(f"Selected style: {style}")
+        log.debug(f"Selected topic: {seed_topic}")
+        
+        prompt = (f"Write a tweet in the style of Vitalik Buterin ({style}) about "
+                f"{seed_topic}. Use a mix of technical insight and philosophical observation."
+                f"Make sure the tweet is no longer than 280 characters.")
+        
+        tweet_response = await call_api(prompt, client)
+        if not tweet_response:
+            log.error("Received empty response from API")
+            return {"error": "Empty API response", "topic": seed_topic, "style": style}
+            
+        tweet = format_tweet(tweet_response)
+        result = {
+            "tweet": tweet,
+            "topic": seed_topic,
+            "style": style,
+            "character_count": len(tweet)
+        }
+        
+        if post_to_twitter:
+            log.debug("Attempting to post tweet to Twitter")
+            result["twitter_response"] = post_tweet(tweet)
+            
+        return result
+    except Exception as e:
+        log.error(f"Error in generate_and_post_tweet: {e}")
+        log.error(f"Traceback:\n{traceback.format_exc()}")
+        return {"error": str(e)}
 
 #? Main async entry point ----------------------------------------------------------
 async def main():
-    async with httpx.AsyncClient() as client:
+    # Use a custom timeout with read disabled
+    custom_timeout = httpx.Timeout(connect=60.0, read=None, write=60.0, pool=60.0)
+    limits = httpx.Limits(max_keepalive_connections=5, max_connections=10)
+    
+    async with httpx.AsyncClient(timeout=custom_timeout, limits=limits) as client:
         result = await generate_and_post_tweet(post_to_twitter=False, client=client)
         if "tweet" in result:
             log.success("Generated Tweet:")
