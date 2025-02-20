@@ -2,7 +2,6 @@ import asyncio
 import random
 import httpx  # For async HTTP calls
 from typing import Dict, Any
-from dotenv import load_dotenv
 from ultraconfiguration import UltraConfig
 from ultraprint.logging import logger
 from keys.keys import environment
