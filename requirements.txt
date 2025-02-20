@@ -1,3 +1,5 @@
 tweepy==4.15.0
 asyncio==3.4.3
 httpx==0.28.1
+ultraconfiguration==1.2.0
+ultraprint==3.2.0

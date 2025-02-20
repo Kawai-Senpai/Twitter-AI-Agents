@@ -19,12 +19,21 @@ log = logger('chat_log',
 #? API caller function -----------------------------------------------------------
 async def call_api(prompt: str, client: httpx.AsyncClient) -> str:
     """Call the external API endpoint to process the prompt."""
-    session_id = config.get("session_id", "default_session")
-    agent_id = config.get("agent_id", "vitalik")
-    url = f"{aiml_service_url}/{session_id}?agent_id={agent_id}"
+    session_id = config.get("session_id")
+    agent_id = config.get("agent_id")
+    url = f"{aiml_service_url}/chat/agent/{session_id}"
+    
     try:
-        payload = {"input": prompt}
-        response = await client.post(url, json=payload)
+        payload = {"message": prompt}
+        params = {
+            "agent_id": agent_id,
+            "use_rag": "True",
+            "stream": "False",
+            "include_rich_response": "False"
+        }
+        
+        response = await client.post(url, json=payload, params=params)
+        response.raise_for_status()
         data = response.json()
         return data.get("response", "")
     except Exception as e:
