@@ -4,5 +4,28 @@
         "production_level": "INFO",
         "include_extra_info": false,
         "write_to_file": false
-    }
+    },
+    
+    "session_id": "default_session",
+    "agent_id": "vitalik",
+
+    "tweet_styles": [
+        "technical_insight",
+        "philosophical_observation",
+        "future_prediction",
+        "current_analysis",
+        "historical_comparison"
+    ],
+    "seed_topics": [
+        "Ethereum scaling solutions",
+        "DeFi adoption",
+        "NFT innovation",
+        "Layer 2 advancements",
+        "Smart contract security",
+        "Blockchain interoperability",
+        "Cryptographic breakthroughs",
+        "Decentralized governance",
+        "Sustainable blockchain",
+        "Web3 innovations"
+    ]
 }
