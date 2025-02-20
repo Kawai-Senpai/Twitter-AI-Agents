@@ -1,0 +1,6 @@
+
+#! Ignore
+.env*
+
+#! Do not ignore
+!.env

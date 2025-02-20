@@ -5,6 +5,18 @@ import httpx  # For async HTTP calls
 from typing import Dict, Any
 import tweepy
 from dotenv import load_dotenv
+from ultraconfiguration import UltraConfig
+from ultraprint.logging import logger
+from keys.keys import environment
+from keys.keys import twitter_api_key, twitter_api_secret, twitter_access_token, twitter_access_token_secret, twitter_bearer_token
+
+#! Initialize ---------------------------------------------------------------
+config = UltraConfig('config.json')
+log = logger('chat_log', 
+            filename='debug/chat.log', 
+            include_extra_info=config.get("logging.include_extra_info", False), 
+            write_to_file=config.get("logging.write_to_file", False), 
+            log_level=config.get("logging.development_level", "DEBUG") if environment == 'development' else config.get("logging.production_level", "INFO"))
 
 # Load environment variables
 load_dotenv()
@@ -28,11 +40,11 @@ def post_tweet(text: str) -> Dict:
     """Post a tweet using Tweepy and return the response."""
     try:
         client = tweepy.Client(
-            consumer_key=os.getenv('TWITTER_API_KEY'),
-            consumer_secret=os.getenv('TWITTER_API_SECRET'),
-            access_token=os.getenv('TWITTER_ACCESS_TOKEN'),
-            access_token_secret=os.getenv('TWITTER_ACCESS_TOKEN_SECRET'),
-            bearer_token=os.getenv('TWITTER_BEARER_TOKEN')
+            consumer_key=twitter_api_key,
+            consumer_secret=twitter_api_secret,
+            access_token=twitter_access_token,
+            access_token_secret=twitter_access_token_secret,
+            bearer_token=twitter_bearer_token
         )
         response = client.create_tweet(text=text)
         return {
