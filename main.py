@@ -71,7 +71,7 @@ def format_tweet(content: str) -> str:
     return content[:bp + 1] if bp != -1 else content[:277] + "..."
 
 #? Main function to generate and optionally post a tweet ---------------------------
-async def generate_and_post_tweet(post_to_twitter: bool = False, client: httpx.AsyncClient = None) -> Dict[str, Any]:
+async def generate_and_post_tweet(post_to_twitter: bool = True, client: httpx.AsyncClient = None) -> Dict[str, Any]:
     """Generate a tweet in Vitalik's style via an API call and optionally post it."""
     try:
         style = random.choice(config.get("tweet_styles", ["future_prediction"]))
@@ -114,7 +114,7 @@ async def main():
     limits = httpx.Limits(max_keepalive_connections=5, max_connections=10)
     
     async with httpx.AsyncClient(timeout=custom_timeout, limits=limits) as client:
-        result = await generate_and_post_tweet(post_to_twitter=False, client=client)
+        result = await generate_and_post_tweet(post_to_twitter=True, client=client)
         if "tweet" in result:
             log.success("Generated Tweet:")
             log.info("-" * 40)

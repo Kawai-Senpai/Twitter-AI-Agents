@@ -1,1 +1,1 @@
-0 * * * * /home/ubuntu/twitterbots/myvenv/bin/python /home/ubuntu/twitterbots/twitterposter/main.py --config config.elinor.json
+0 * * * * cd /home/ubuntu/twitterbots/twitterposter/ && /home/ubuntu/twitterbots/myvenv/bin/python main.py --config config.elinor.json
