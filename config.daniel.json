@@ -1,0 +1,30 @@
+{
+    "logging": {
+        "development_level": "DEBUG",
+        "production_level": "INFO",
+        "include_extra_info": false,
+        "write_to_file": false
+    },
+    
+    "session_id": "67b9cd732976626e16e9402b",
+    "agent_id": "67b5cde7188cbf19b33f1bb2",
+
+    "tweet_styles": [
+        "preventive_focus",
+        "holistic_perspective",
+        "educational_engagement",
+        "collaborative_dialogue",
+        "ethical_transparency",
+        "interdisciplinary_analysis"
+    ],
+    "seed_topics": [
+        "existential risk assessment",
+        "systemic risk mitigation",
+        "multidisciplinary metacrisis analysis",
+        "holistic sustainability strategies",
+        "public sensemaking and ethical dialogue",
+        "collaborative frameworks for resilience",
+        "innovation in preventing societal collapse"
+    ],
+    "main_inst": "in the style of Daniel Schmachtenberger"
+}

@@ -8,14 +8,7 @@ from ultraprint.logging import logger
 from keys.keys import environment
 from keys.keys import aiml_service_url
 from twitter.twitter import post_tweet
-
-#! Initialize ---------------------------------------------------------------
-config = UltraConfig('config.json')
-log = logger('agent_log', 
-            filename='debug/chat.log', 
-            include_extra_info=config.get("logging.include_extra_info", False), 
-            write_to_file=config.get("logging.write_to_file", False), 
-            log_level=config.get("logging.development_level", "DEBUG") if environment == 'development' else config.get("logging.production_level", "INFO"))
+import argparse
 
 #? Configuration constants --------------------------------------------------------
 HTTP_TIMEOUT = 30.0  # seconds
@@ -137,4 +130,18 @@ async def main():
             log.error("Error: " + result.get("error", "Unknown error occurred"))
 
 if __name__ == "__main__":
+    # Parse command-line argument for configuration file
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--config', type=str, default='config.json', help='Path to configuration JSON file')
+    args = parser.parse_args()
+
+    # Initialize globals using the provided config file path
+    global config, log
+    config = UltraConfig(args.config)
+    log = logger('agent_log', 
+                filename='debug/chat.log', 
+                include_extra_info=config.get("logging.include_extra_info", False), 
+                write_to_file=config.get("logging.write_to_file", False), 
+                log_level=config.get("logging.development_level", "DEBUG") if environment == 'development' else config.get("logging.production_level", "INFO"))
+
     asyncio.run(main())

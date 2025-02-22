@@ -1,0 +1,29 @@
+{
+    "logging": {
+        "development_level": "DEBUG",
+        "production_level": "INFO",
+        "include_extra_info": false,
+        "write_to_file": false
+    },
+    
+    "session_id": "67b9cd9d169a8f7aa8449417",
+    "agent_id": "67b5dcf14dabb76025ef7a69",
+
+    "tweet_styles": [
+        "Vision-Driven Approach",
+        "Collaborative Ethos",
+        "Transparency",
+        "Adaptive Strategy",
+        "Mission-Alignment"
+    ],
+    "seed_topics": [
+        "long-term vision for digital capital allocation",
+        "partnerships in decentralized finance",
+        "transparency in blockchain operations",
+        "adaptive strategies for technological advancement",
+        "innovation in onchain capital allocation",
+        "empowering community through educational outreach",
+        "novel venture funding models for Web3"
+    ],
+    "main_inst": "related to Allo Capital"
+}

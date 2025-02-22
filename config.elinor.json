@@ -1,0 +1,33 @@
+{
+    "logging": {
+        "development_level": "DEBUG",
+        "production_level": "INFO",
+        "include_extra_info": false,
+        "write_to_file": false
+    },
+    
+    "session_id": "67b9c852e528126328d4e20a",
+    "agent_id": "67b5c8907fcf2fe677efb46d",
+
+    "tweet_styles": [
+        "evidence_based_analysis",
+        "contextual_sensitivity",
+        "transparency_participation",
+        "holistic_perspective",
+        "adaptive_governance",
+        "institutional_analysis"
+    ],
+    "seed_topics": [
+        "empirical research in resource management",
+        "local governance case studies",
+        "community-based resource management",
+        "adaptive institutional design",
+        "holistic environmental policy",
+        "stakeholder engagement strategies",
+        "transdisciplinary analysis",
+        "inclusive participation methods",
+        "transparency in governance",
+        "historical precedents in resource management"
+    ],
+    "main_inst": "in the style of Elinor Ostrom"
+}
