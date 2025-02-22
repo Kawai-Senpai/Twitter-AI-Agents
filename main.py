@@ -15,6 +15,22 @@ HTTP_TIMEOUT = 30.0  # seconds
 
 #? API caller function -----------------------------------------------------------
 async def call_api(prompt: str, client: httpx.AsyncClient) -> str:
+    """
+    Call the external API endpoint to process the given prompt.
+    This asynchronous function sends a POST request to an external API endpoint with the provided prompt.
+    It constructs the API URL using session and agent identifiers retrieved from configuration values, and uses
+    customized request parameters and timeout settings.
+    Args:
+        prompt (str): The message to be processed by the external API.
+        client (httpx.AsyncClient): The asynchronous HTTP client used to send the API request.
+    Returns:
+        str: The response from the API as a string. If the API returns an empty response or in case of an exception,
+            an empty string is returned.
+    Notes:
+        - The API call includes additional query parameters to control agent behavior and response formatting.
+        - Detailed debug logging is performed to track the request and response data.
+        - Exceptions are caught, logged, and result in an empty string being returned.
+    """
     """Call the external API endpoint to process the prompt."""
     session_id = config.get("session_id")
     agent_id = config.get("agent_id")
@@ -62,6 +78,25 @@ async def call_api(prompt: str, client: httpx.AsyncClient) -> str:
 
 #? Helper to format tweet text -----------------------------------------------------
 def format_tweet(content: str) -> str:
+    """
+    Format the given text into a tweet-sized message.
+
+    Parameters:
+        content (str): The original text content to be formatted as a tweet.
+
+    Returns:
+        str: A string no longer than 280 characters. If the original content is within the limit,
+             it is returned unchanged. If it exceeds 280 characters, the function attempts to truncate
+             the text intelligently by:
+             - Searching for the last period ('.') within the first 277 characters to end at a complete sentence.
+             - If no period is found, searching for the last space within the same range.
+             - If a suitable breakpoint is found, returning the content up to that point.
+             - If no breakpoint is found, truncating directly at 277 characters and appending an ellipsis.
+
+    Behavior:
+        This function ensures that the output is appropriately trimmed for Twitter's character limit,
+        prioritizing natural sentence breaks when possible to maintain readability.
+    """
     """Format content into a tweet-sized message."""
     if len(content) <= 280:
         return content
@@ -72,6 +107,29 @@ def format_tweet(content: str) -> str:
 
 #? Main function to generate and optionally post a tweet ---------------------------
 async def generate_and_post_tweet(post_to_twitter: bool = True, client: httpx.AsyncClient = None) -> Dict[str, Any]:
+    """
+    Generate a tweet in Vitalik's style via an API call and optionally post it to Twitter.
+    This asynchronous function performs the following steps:
+    1. Selects a tweet style and seed topic from the configuration.
+    2. Constructs a prompt using the chosen style and topic.
+    3. Calls an external API with the prompt to generate tweet content.
+    4. Formats the API response to produce a tweet.
+    5. Optionally posts the tweet to Twitter if the `post_to_twitter` flag is True.
+    6. Returns a dictionary containing the generated tweet, topic, style, character count, and,
+        if applicable, the Twitter response.
+    7. Handles and logs any exceptions, returning a dictionary with an error message in such cases.
+    Parameters:
+         post_to_twitter (bool): Optional; if True, the generated tweet will be posted to Twitter. Defaults to True.
+         client (httpx.AsyncClient, optional): An asynchronous HTTP client to be used for making API calls.
+    Returns:
+         dict: A dictionary with the following keys:
+              - "tweet": The formatted tweet string.
+              - "topic": The topic used for generating the tweet.
+              - "style": The style selected for the tweet.
+              - "character_count": The number of characters in the tweet.
+              - "twitter_response": (Optional) The response from the Twitter API after posting the tweet.
+              - "error": (Optional) An error message if an exception occurs during execution.
+    """
     """Generate a tweet in Vitalik's style via an API call and optionally post it."""
     try:
         style = random.choice(config.get("tweet_styles", ["future_prediction"]))
